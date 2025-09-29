@@ -10,10 +10,16 @@ $lang['moddescription'] = 'CMSMS Smarty Tools';
 $lang['postinstall'] = 'Smarty Extensions is now installed';
 $lang['postuninstall'] = 'Smarty Extensions has been removed';
 
-/* tab labels are:
-'About'
-'Class'
-'General'
-'Plugins'
-"What's New"
+/*
+un-translated tab labels are:
+$lang[''] = 'General';
+$lang[''] = 'Index';
+$lang[''] = 'Methods';
+$lang[''] = 'Plugins';
+un-translated headings include:
+What Does This Do?
+Support
+Copyright and License
+Parameters
+Example
 */

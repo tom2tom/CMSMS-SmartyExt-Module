@@ -38,8 +38,17 @@ class SmartyExt extends CMSModule
     {
         $smarty = cmsms()->GetSmarty();
         $modname = $this->GetName();
-        $tpl = $smarty->createTemplate("module_file_tpl:$modname;help.tpl", null, null, $smarty);
-        $tpl->assign('baseurl', $this->GetModuleURLPath());
+        $dir = ''; // default language direction (for css selection)
+        $langnow = CmsNlsOperations::get_current_language();
+        if ($langnow) { 
+            $info = CmsNlsOperations::get_language_info($langnow);
+            if ($info->direction() == 'rtl') {
+                $dir = '-rtl';
+            }
+        }
+        $tpl = $smarty->createTemplate("module_file_tpl:$modname;help.tpl", null, null, null);
+        $tpl->assign('dir', $dir)
+          ->assign('baseurl', $this->GetModuleURLPath());
         return $tpl->fetch();
     }
 

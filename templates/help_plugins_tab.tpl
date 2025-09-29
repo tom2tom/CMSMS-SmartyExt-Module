@@ -1,6 +1,4 @@
-<h2>Smarty Plugins</h2>
-<p>This is a list of the plugins available from this module, with instructions and example usage.</p>
-
+<p style="font-weight:600">The plugins available from this module, with instructions and example usage.</p>
 <ul class="accordion-list">
   <li class="accordion-list-item">
     <h3 id="content_fetch" class="al">&#123;content_fetch} <span class="small">Fetch and reuse CMSMS content</span></h3>
@@ -8,117 +6,117 @@
       <p>A fork of <strong><em>&#123;content_dump}</em></strong> from Nils Haack. Still a work in progress, so keep checking these docs for changes in parameters and behaviour.</p>
       <p>A <em>'Swiss Army Knife'</em> for CMSMS content fetching, giving you the ability to fetch content and insert it into a single page. It offers a variety of independent parameters that can be combined to cater for a lot of your site's internal content distribution needs.</p>
       <p>Just attach some parameters and limit/organize the output to your data requirements. The Smarty output allows you to freely design the results in your template or content block (from the regular editors view - though it is recommended to do it in the template). With Smarty, you can even control the output by limiting it to specific values (e.g. only user 'John Doe') or use modifiers to further manipulate the content.</p>
-      <h4>Parameters</h4>
+      <h4>Recognised Parameters</h4>
       <ul>
-        <li><strong>block_name</strong> - The name of the content block to fetch from (default <strong>content_en</strong>);</li>
-        <li><strong>start_id</strong> - Defines a starting point for the content fetching (default <strong>-1</strong> meaning all matching content);</li>
-        <li><strong>limit_start</strong> - The first n items to skip (default <strong>0</strong>);</li>
-        <li><strong>limit_count</strong> - Maximum number of pages to fetch (default <strong>1000</strong>);</li>
-        <li><strong>page</strong> - Generates a single page view out of the results of rest of the parameters, allowing for some form of pagination (default <strong>0</strong>);</li>
+        <li><strong>block_name</strong> - The name of the content block to fetch from (default <strong>content_en</strong>)</li>
+        <li><strong>start_id</strong> - Defines a starting point for the content fetching (default <strong>-1</strong> meaning all matching content)</li>
+        <li><strong>limit_start</strong> - The first n items to skip (default <strong>0</strong>)</li>
+        <li><strong>limit_count</strong> - Maximum number of pages to fetch (default <strong>1000</strong>)</li>
+        <li><strong>page</strong> - Generates a single page view out of the results of rest of the parameters, allowing for some form of pagination (default <strong>0</strong>)</li>
         <li>
           <strong>active</strong> - filter by page states; accepted values are:
           <ul>
-            <li><strong>force</strong> - show everything regardless of their state;</li>
-            <li><strong>active</strong> - show only active pages (default);</li>
-            <li><strong>inactive</strong> - show only inactive pages;</li>
+            <li><strong>force</strong> - show everything regardless of their state</li>
+            <li><strong>active</strong> - show only active pages (default)</li>
+            <li><strong>inactive</strong> - show only inactive pages</li>
           </ul>
         </li>
         <li>
           <strong>show_in_menu</strong> | <strong>shown_in_menu</strong> - filter by menu visibility; accepted values are:
           <ul>
-            <li><strong>force</strong> - show everything regardless of their visibility in a menu;</li>
-            <li><strong>show</strong> - show only pages set to be visible in a menu (default);</li>
-            <li><strong>hidden</strong> - show only pages set not to be visible in a menu;</li>
+            <li><strong>force</strong> - show everything regardless of their visibility in a menu</li>
+            <li><strong>show</strong> - show only pages set to be visible in a menu (default)</li>
+            <li><strong>hidden</strong> - show only pages set not to be visible in a menu</li>
           </ul>
         </li>
-        <li><strong>filter</strong> - Filter results by words or phrases (see extended help and examples below);</li>
-        <li><strong>prefix</strong> - Filter results by alias prefix(es) (see extended help and examples below);</li>
+        <li><strong>filter</strong> - Filter results by words or phrases (see extended help and examples below)</li>
+        <li><strong>prefix</strong> - Filter results by alias prefix(es) (see extended help and examples below)</li>
         <li>
           <strong>prefix_mode</strong> - Changes the <strong>prefix</strong> filtering behaviour; accepted values are:
           <ul>
-            <li><strong>force</strong> - show only pages with the prefix(es) listed;</li>
-            <li><strong>neutral</strong> - ignores prefix(es) (default);</li> {* actually doesnt make sense... (JM) *}
-            <li><strong>hide</strong> - show only pages without the prefix(es) listed;</li>
+            <li><strong>force</strong> - show only pages with the prefix(es) listed</li>
+            <li><strong>neutral</strong> - ignores prefix(es) (default)</li> {* actually doesn't make sense... (JM) *}
+            <li><strong>hide</strong> - show only pages without the prefix(es) listed</li>
           </ul>
         </li>
         <li>
-          <strong>depth</strong> - Filter results by hierarchy start point and number of levels. It takes two integer values seperated by comma such as '-1,3', '-1' being the starting point, in this case the root and '3' the number of levels (or how deep) to fetch (see extended help and examples below). If used, both values are mandatory;
+          <strong>depth</strong> - Filter results by hierarchy start point and number of levels. It takes two integer values separated by a comma e.g. '-1,3', '-1' being the starting point, in this case the root, and '3' the number of levels (or how deep) to fetch (see extended help and examples below). If used, both values are mandatory;
         </li>
-        <li><strong>exclude</strong> - Exclude content by id, accepting comma seperated lists of integers if needed;</li>
-        <li><strong>this_only</strong> - Fetch a particular content from pages by id;</li>
-        <li><strong>these_only</strong> - Fetch a particular set of content from pages by a comma seperated lists of integers of ids;</li>
-        <li><strong>parents</strong> - A boolean type setting defining whether to include a limited set of properties of the parents of each result, defaults to false (see extended help and examples below);</li>
+        <li><strong>exclude</strong> - Exclude content by id, accepting comma-separated lists of integers if needed</li>
+        <li><strong>this_only</strong> - Fetch a particular content from pages by id</li>
+        <li><strong>these_only</strong> - Fetch a particular set of content from pages by a comma-separated list of integers of ids</li>
+        <li><strong>parents</strong> - A boolean type setting defining whether to include a limited set of properties of the parents of each result, defaults to false (see extended help and examples below)</li>
         <li>
           <strong>users</strong> - A boolean type setting defining whether to expand user data related to the content such as <strong>created by</strong> and <strong>modified by</strong> which if true will return <strong>username</strong>,
           <strong>firstname</strong> and <strong>lastname</strong> in addition to the default (if false) <strong>uid</strong> (see extended help and examples below);
         </li>
         <li>
-          <strong>extensions</strong> - A comma seperated list of content_blocks to determine if they exist and have content; it will show in the results list as an additional property for each result with a value of '1' or '0' depending on
+          <strong>extensions</strong> - A comma-separated list of content blocks to determine if they exist and have content; it will show in the results list as an additional property for each result with a value of '1' or '0' depending on
           whether the content block has been found and is not empty (default <strong>false</strong>) (see extended help and examples below);
         </li>
-        <li><strong>dateformat</strong> - Format the date output in a PHP strftime format (default <strong>'%A, %e %B %Y'</strong>). Note: deprecated pending some more changes to the CMSMS core to be PHP 8.0+ compatible;</li>
-        <li><strong>cdlocale</strong> - Specify a specific locale for the output otherwise system default is used;</li>
-        <li><strong>locale</strong> - Specify a specific locale used for the timestamp otherwise system default is used;</li>
+        <li><strong>dateformat</strong> - Format the date output in a PHP strftime format (default <strong>'%A, %e %B %Y'</strong>). Note: deprecated pending some more changes to the CMSMS core to be PHP 8.0+ compatible</li>
+        <li><strong>cdlocale</strong> - Specify a specific locale for the output otherwise system default is used</li>
+        <li><strong>locale</strong> - Specify a specific locale used for the timestamp otherwise system default is used</li>
         <li>
           <strong>do_smarty</strong> - Changes the Smarty parsing behaviour; accepted values are:
           <ul>
-            <li><strong>compile</strong> - parses the content through Smarty before output. Note: can be recursive and result in endless loops;</li>
-            <li><strong>neutral</strong> - passes through without parsing (default);</li>
-            <li><strong>strip</strong> - an attempt is made to remove anything between '&#123;' and '}' (and that means <em>anything</em>);</li>
+            <li><strong>compile</strong> - parses the content through Smarty before output. Note: can be recursive and result in endless loops</li>
+            <li><strong>neutral</strong> - passes through without parsing (default)</li>
+            <li><strong>strip</strong> - an attempt is made to remove anything between '&#123;' and '}' (and that means <em>anything</em>)</li>
           </ul>
           <p>Notes:</p>
           <ul>
-            <li>there is a real chance of, inadvertently, create an endless loop with the <strong>compile</strong> option resulting in out of memory errors;</li>
-            <li>to try to prevent this the plugin can recognise a single use of the tag in the content an that should be safe;</li>
-            <li>multiple occurrences of the tag on the same content block using the <strong>compile</strong> option cannot be safely detected and should be avoided;</li>
+            <li>there is a real chance of inadvertently creating an endless loop with the <strong>compile</strong> option resulting in out of memory errors</li>
+            <li>to try to prevent this the plugin can recognise a single use of the tag in the content an that should be safe</li>
+            <li>multiple occurrences of the tag on the same content block using the <strong>compile</strong> option cannot be safely detected and should be avoided</li>
             <li>
               <strong>strip</strong> mode uses a regex to remove any and all occurrences of patterns with a '&#123;' ... '}' construct. That means other natural language constructs that fit that pattern will also be removed. JavaScript constructs
               can easily become corrupted too;
             </li>
-            <li>one way to avoid that issue with natural language text constructs is to replace '&#123;' and '}' with their html codes, respectively: <strong>'&amp;#123;'</strong> and <strong>'&amp;#125;'</strong> or equivalent;</li>
-            <li>regarding JavaScript, the best alternative is to move the code snippets used to a different content block or to the main template(s) if at all possible;</li>
+            <li>one way to avoid that issue with natural language text constructs is to replace '&#123;' and '}' with their html codes, respectively: <strong>'&amp;#123;'</strong> and <strong>'&amp;#125;'</strong> or equivalent</li>
+            <li>regarding JavaScript, the best alternative is to move the code snippets used to a different content block or to the main template(s) if at all possible</li>
           </ul>
         </li>
         <li>
           <strong>html</strong> - Tries to remove any and all HTML, JavaScript and CSS from the resulting content block(s) so it can be possible to safely truncate the text; accepted values are:
           <ul>
-            <li><strong>strip</strong> - strips the retrieved blocks;</li>
-            <li><strong>neutral</strong> - passes through the retrieved blocks after processing <strong>do_smarty</strong>;</li>
+            <li><strong>strip</strong> - strips the retrieved blocks</li>
+            <li><strong>neutral</strong> - passes through the retrieved blocks after processing <strong>do_smarty</strong></li>
           </ul>
         </li>
         <li>
           <strong>first_sort</strong> - sorts the content by specific elements; accepted values are:
           <ul>
-            <li><strong>id</strong> - sorts by page (content) id;</li>
-            <li><strong>title</strong> - sorts by page (content) title;</li>
-            <li><strong>created</strong> - sorts by page (content) created date (order may need to be reversed);</li>
-            <li><strong>modified</strong> - sorts by page (content) modified date (order may need to be reversed);</li>
-            <li><strong>owner</strong> - sorts by page (content) owner id;</li>
-            <li><strong>hierarchy</strong> - sorts by page (content) hierarchy;</li>
-            <li><strong>id_hierarchy</strong> - sorts by page (content) hierarchy id;</li>
-            <li><strong>lasteditor</strong> - sorts by page (content) last editor id;</li>
-            <li><strong>active</strong> - sorts by page (content) active state;</li>
-            <li><strong>show</strong> - sorts by page (content) menu visibility;</li>
+            <li><strong>id</strong> - sorts by page (content) id</li>
+            <li><strong>title</strong> - sorts by page (content) title</li>
+            <li><strong>created</strong> - sorts by page (content) created date (order may need to be reversed)</li>
+            <li><strong>modified</strong> - sorts by page (content) modified date (order may need to be reversed)</li>
+            <li><strong>owner</strong> - sorts by page (content) owner id</li>
+            <li><strong>hierarchy</strong> - sorts by page (content) hierarchy</li>
+            <li><strong>id_hierarchy</strong> - sorts by page (content) hierarchy id</li>
+            <li><strong>lasteditor</strong> - sorts by page (content) last editor id</li>
+            <li><strong>active</strong> - sorts by page (content) active state</li>
+            <li><strong>show</strong> - sorts by page (content) menu visibility</li>
           </ul>
         </li>
-        <li><strong>first_sort_order</strong> - determines the direction of the sorting filter, whether it is <em>'up'</em> or <em>'down'</em> (default <strong>'up'</strong> as in alphabetically A to B);</li>
+        <li><strong>first_sort_order</strong> - determines the direction of the sorting filter, whether it is <em>'up'</em> or <em>'down'</em> (default <strong>'up'</strong> as in alphabetically A to B)</li>
         <li>
           <strong>second_sort</strong> - sorts the content by specific elements; accepted values are:
           <ul>
-            <li><strong>id</strong> - sorts by page (content) id;</li>
-            <li><strong>title</strong> - sorts by page (content) title;</li>
-            <li><strong>created</strong> - sorts by page (content) created date (order may need to be reversed);</li>
-            <li><strong>modified</strong> - sorts by page (content) modified date (order may need to be reversed);</li>
-            <li><strong>owner</strong> - sorts by page (content) owner id;</li>
-            <li><strong>hierarchy</strong> - sorts by page (content) hierarchy;</li>
-            <li><strong>id_hierarchy</strong> - sorts by page (content) hierarchy id;</li>
-            <li><strong>lasteditor</strong> - sorts by page (content) last editor id;</li>
-            <li><strong>active</strong> - sorts by page (content) active state;</li>
-            <li><strong>show</strong> - sorts by page (content) menu visibility;</li>
+            <li><strong>id</strong> - sorts by page (content) id</li>
+            <li><strong>title</strong> - sorts by page (content) title</li>
+            <li><strong>created</strong> - sorts by page (content) created date (order may need to be reversed)</li>
+            <li><strong>modified</strong> - sorts by page (content) modified date (order may need to be reversed)</li>
+            <li><strong>owner</strong> - sorts by page (content) owner id</li>
+            <li><strong>hierarchy</strong> - sorts by page (content) hierarchy</li>
+            <li><strong>id_hierarchy</strong> - sorts by page (content) hierarchy id</li>
+            <li><strong>lasteditor</strong> - sorts by page (content) last editor id</li>
+            <li><strong>active</strong> - sorts by page (content) active state</li>
+            <li><strong>show</strong> - sorts by page (content) menu visibility</li>
           </ul>
         </li>
-        <li><strong>second_sort_order</strong> - determines the direction of the sorting filter, whether it is <em>'up'</em> or <em>'down'</em> (default <strong>'up'</strong> as in alphabetically A to B);</li>
-        <li><strong>assign</strong> - Assign the output to the specified Smarty variable (default <strong>content_fetch</strong> meaning the result will be available via &#123;$content_fetch});</li>
+        <li><strong>second_sort_order</strong> - determines the direction of the sorting filter, whether it is <em>'up'</em> or <em>'down'</em> (default <strong>'up'</strong> as in alphabetically A to B)</li>
+        <li><strong>assign</strong> - Assign the output to the specified Smarty variable (default <strong>content_fetch</strong> meaning the result will be available via &#123;$content_fetch})</li>
       </ul>
       <hr>
       <h2>Extended Help and Examples</h2>
@@ -127,7 +125,7 @@
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch assign='my_var_name'}
-  &lt;pre>&#123$my_var_name|print_r:1}&lt;/pre></pre>
+  &lt;pre>&#123;$my_var_name|print_r:1}&lt;/pre></pre>
       <p>That should output the contents of the assigned var as an array of results the structure of which should vary depending on the parameters used.</p>
 
       <h3>Selecting items</h3>
@@ -162,95 +160,95 @@
 
       <h4><em>Show also inactive pages or only inactive pages.</em></h4>
       <p><strong>active</strong> can be used to control how the <strong>'active'</strong> flag of pages should be interpreted. 'force' shows all pages regardless of status. 'active' show active pages only (default). 'inactive' show inactive pages only.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch active='force'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch active='force'}</pre>
 
       <h4><em>Shown in menu?</em></h4>
       <p><strong>shown_in_menu</strong> can be used to control how the 'show_in_menu' flag of pages should be interpreted. 'force' shows all pages regardless of status. 'show' show pages set to 'Show in Menu' only (default). 'hidden' show pages that are set to 'Don't Show in Menu' only.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch show_in_menu='hidden'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch show_in_menu='hidden'}</pre>
 
       <h3>Filter items</h3>
 
       <h4><em>Filter for specific content (e.g. check if data fields contain the word 'world')</em></h4>
       <p><strong>filter</strong> can be used to limit the results to entries which contain specific words or phrases or to exlude such items. Use boolean logic. e.g. filter='-hello' to exclude items that contain the word 'hello' in any of their content->data or extension->itemname->data elements or filter='world' to limit the results to those items that contain the word 'world' in any of their data elements.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch filter='world'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch filter='world'}</pre>
 
       <h4><em>Exclude or limit (filter) the output to pages with matching alias prefix</em></h4>
-      <p><strong>prefix</strong> can be used to state the prefix or prefixes that should be considered for excluding from the collection or that should be the only pages in the collection. Several prefixes can be used but must be separated by comma. E.g. &#123$content_fetch prefix='private_,special_'}</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch prefix='prefixname'}</pre>
+      <p><strong>prefix</strong> can be used to state the prefix or prefixes that should be considered for excluding from the collection or that should be the only pages in the collection. Several prefixes can be used but must be separated by comma. E.g. &#123;$content_fetch prefix='private_,special_'}</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch prefix='prefixname'}</pre>
 
       <h4><em>How should the prefix or list of prefix(es) be handled?</em></h4>
       <p><strong>prefix_mode</strong> Prefix-mode is used to control the handling of the prefix(es). 'force', 'neutral" and "hide' are the available values. Standard mode is neutral that will disregard any available prefix. Forced mode only shows pages with one of the stated prefixes. Hide will exclude pages with the prefix from the items returned.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch prefix_mode='hide'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch prefix_mode='hide'}</pre>
 
       <h4><em>How can I limit the output to specific hierarchy levels (e.g. depth) ?</em></h4>
       <p><strong>depth</strong> is used to control which hierarchy levels should be considered for output. It takes two integer values separated by comma (e.g. depth='-1,3'}. The first value defines the starting hierarchy. -1 = start with content_fetch, n = start with specific hierarchy level [0 and 1 both return first level].</p>
       <p>The second value defines the number of additional levels added to the collection. 0 = no depth, siblings of page specified with first depth value are returned (if not excluded otherwise). n = number of additional level relative to the level specified with first depth value.</p>
       <p><strong>Both values must be used!</strong></p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch depth='-1,3'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch depth='-1,3'}</pre>
 
       <h3>Exclude items</h3>
 
       <p><em>Exclude single items from the list</em></p>
       <p><strong>exclude</strong> allows you to remove specific pages from the results. It takes any number of content <em>IDs separated by comma</em>. Especially when forcing content_fetch to compile smarty in found content-blocks, you can use this tag to break endless recursions or for any other reason where you want specific pages not to appear.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch exclude='13,23,53,12,32'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch exclude='13,23,53,12,32'}</pre>
 
       <p><em>Just show the data of a specific element</em></p>
       <p><strong>this_only</strong> is a parameter that will limit the result to this specific ID.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch this_only=55}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch this_only=55}</pre>
 
       <h3>Add more data to the item</h3>
       <h4><em>Get more information about parent pages</em></h4>
       <p><strong>parents</strong> can be used to request more information about the parent pages (alias and title). Possible values are <em>true</em> or <em>false</em>. Using these parameters allows you to use the data element $dump[n]->parents->alias or $dump[n]->parents->title. The data element $dump[n]->parents->id will be provided in any case.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch parents=true}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch parents=true}</pre>
 
       <h4><em>Get more information about the users who wrote/edited the content</em></h4>
       <p><strong>users</strong> can be used to request more information about the users who last edited and created the content. Possible values are <em>true</em> or <em>false</em>. Per default $dump[n]->created->by and $dump[n]->modified->by will only return the user ID. If set to true, the mentioned class elements will be expanded by detailed user info (first-, last- and user name).</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch users=true}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch users=true}</pre>
       <h4><em>Using more content-blocks from the pages</em></h4>
-      <p><strong>extensions</strong> is your choice then. It takes a <em>comma separated list of content_blocks</em>. If any of them (for an item) features content, $dump[n]->extension will be '1', other wise it will be '0' (default). This can be used to check for availability of 'more' data. Each content_block will be added as a class below $dump[n]->extensions. E.g. &#123$content block='more_text'} will be available as $dump[n]->extensions->more_text->data together with $dump[n]->extensions->more_text->length. Ideally, your content block names do not feature special characters and not ' ' or '-', use '_' instead.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch extensions='summary,image,other_block_name'}</pre>
+      <p><strong>extensions</strong> is your choice then. It takes a <em>comma separated list of content_blocks</em>. If any of them (for an item) features content, $dump[n]->extension will be '1', other wise it will be '0' (default). This can be used to check for availability of 'more' data. Each content_block will be added as a class below $dump[n]->extensions. E.g. &#123;$content block='more_text'} will be available as $dump[n]->extensions->more_text->data together with $dump[n]->extensions->more_text->length. Ideally, your content block names do not feature special characters and not ' ' or '-', use '_' instead.</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch extensions='summary,image,other_block_name'}</pre>
 
       <h3>Process data from items</h3>
 
       <h4><em>Change the date/time format</em></h4>
       <p><strong>dateformat</strong> can be used to format the date output of content_fetch. Check <a href="http://de.php.net/strftime" target="blank">http://de.php.net/strftime</a> for more ifo on the date format _options. It is set to <em>'%A, %e %B %Y'</em> by default (e.g. Sat, 20 September 2008). It is used for the two time stamps $dump[n]->created->date and $dump[n]->modified->date that are always returned with each item.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch dateformat='%A, %e %B %Y'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch dateformat='%A, %e %B %Y'}</pre>
 
       <h4><em>Change the date/time locale</em></h4>
       <p><strong>cdlocale</strong> can be used to specify a specific locale for your output. E.g. your page is danish and your site/server is set to this locale - but for the generation of valid RSS you might need the US date/time locale. </p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch cdlocale='en-us'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch cdlocale='en-us'}</pre>
 
       <h4><em>Change the date format locale</em></h4>
       <p><strong>locale</strong> can be used to alter the locale used for the timestamp (e.g. system is Danish, but you need US day names for XML).</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch locale='en-US'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch locale='en-US'}</pre>
 
       <h4><em>Compile or remove Smarty tags from output</em></h4>
-      <p><strong>do_smarty</strong> controls how smarty data that may be retrieved should be handled. There are three options <em>'compile'</em>, <em>'neutral'</em> and <em>'strip'</em>. <em>'compile'</em> compiles smarty data in the pages found. <em>'neutral'</em> prints out the smarty code as regular text and is the default setting. <em>'strip'</em> deletes all smarty code from your page (well, everything between &#123$ and }).</p>
+      <p><strong>do_smarty</strong> controls how smarty data that may be retrieved should be handled. There are three options <em>'compile'</em>, <em>'neutral'</em> and <em>'strip'</em>. <em>'compile'</em> compiles smarty data in the pages found. <em>'neutral'</em> prints out the smarty code as regular text and is the default setting. <em>'strip'</em> deletes all smarty code from your page (well, everything between &#123;$ and }).</p>
       <p>However, be carefully not to construct a query that would have to compile itself, this will result in an out of memory error due to endless recursion.If you use this tag only once with the compile parameter in your site, no problem, it prevents itself from being rendered. But if you have another occurrence of this tag that would include the page that is calling the currently processed tag with compile='true', you should exclude all of these pages (content_fetch does not check for the compile parameter of other occurrences of the tag).</p>
       <p>If that called tag would feature other content blocks... then, again, all would work nice. Just do not construct something with content_fetch that is somewhere in the chain of events compiling itself.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch do_smarty="compile"}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch do_smarty="compile"}</pre>
 
       <h4><em>Remove HTML from content elements so that it can safely be truncated</em></h4>
       <p><strong>html</strong> is a parameter that allows you to remove any HTML, JavaScript and CSS from a content-block. <em>'strip'</em> and <em>'neutral'</em> are the available _options. <em>'neutral'</em> will display the content as it is (after processing do_smarty settings) and is the default setting. <em>'strip'</em> will remove the mentioned elements.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch html='neutral'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch html='neutral'}</pre>
 
       <h3>Sort items</h3>
 
       <h4><em>Primary sorting of data elements</em></h4>
       <p><strong>first_sort</strong> sorts the found content by one of the following values: <em>id, title, created, modified, owner, hierarchy (default), id_hierarchy, lasteditor, active, show (show in menu)</em>. For time based (like newest contents) use created, for last updated lists use modified (both need to be reversed with sort_order). Hint: Sorting by owner or lasteditor takes place by ID, not name!</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch first_sort='owner'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch first_sort='owner'}</pre>
 
       <h4><em>Set the direction of primary sorting</em></h4>
       <p><strong>first_sort_order</strong> can be used to reverse the sorting filter. <em>'up'</em> and <em>'down'</em> are the available _options, whereas "up" (A before B or yesterday before today) is the default direction.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch first_sort_order='up'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch first_sort_order='up'}</pre>
 
       <h4><em>Secondary sorting of data elements</em></h4>
       <p><strong>second_sort</strong> sorts the found content just as <strong>first_sort_order</strong> does and adds an extra filter to the results</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch second_sort='owner'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch second_sort='owner'}</pre>
 
       <h4><em>Set the direction of secondary sorting</em></h4>
       <p><strong>second_sort_order</strong> is the same as <strong>first_sort_order</strong>  but for <strong>second_sort</strong>.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123$content_fetch second_sort_order='up'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch second_sort_order='up'}</pre>
 
       <h3>Maximum data structure for fetch items:</h3>
 
@@ -261,44 +259,44 @@
 
     $content_fetch[n]-&gt;item  =  Counter for items in current list (integer)
   *}
-  &#123$content_fetch[1]-&gt;content-&gt;id}
-  &#123$content_fetch[1]-&gt;content-&gt;alias}
-  &#123$content_fetch[1]-&gt;content-&gt;title}
-  &#123$content_fetch[1]-&gt;content-&gt;menu}
-  &#123$content_fetch[1]-&gt;content-&gt;show}
-  &#123$content_fetch[1]-&gt;content-&gt;active}
-  &#123$content_fetch[1]-&gt;content-&gt;data}
+  &#123;$content_fetch[1]-&gt;content-&gt;id}
+  &#123;$content_fetch[1]-&gt;content-&gt;alias}
+  &#123;$content_fetch[1]-&gt;content-&gt;title}
+  &#123;$content_fetch[1]-&gt;content-&gt;menu}
+  &#123;$content_fetch[1]-&gt;content-&gt;show}
+  &#123;$content_fetch[1]-&gt;content-&gt;active}
+  &#123;$content_fetch[1]-&gt;content-&gt;data}
 
-  &#123$content_fetch[1]-&gt;parents-&gt;id}
-  &#123$content_fetch[1]-&gt;parents-&gt;alias}
-  &#123$content_fetch[1]-&gt;parents-&gt;title}
+  &#123;$content_fetch[1]-&gt;parents-&gt;id}
+  &#123;$content_fetch[1]-&gt;parents-&gt;alias}
+  &#123;$content_fetch[1]-&gt;parents-&gt;title}
 
-  &#123$content_fetch[1]-&gt;created-&gt;date}
-  &#123$content_fetch[1]-&gt;created-&gt;by-&gt;username}
-  &#123$content_fetch[1]-&gt;created-&gt;by-&gt;last_name}
-  &#123$content_fetch[1]-&gt;created-&gt;by-&gt;first_name}
-  &#123$content_fetch[1]-&gt;created-&gt;by-&gt;email}
+  &#123;$content_fetch[1]-&gt;created-&gt;date}
+  &#123;$content_fetch[1]-&gt;created-&gt;by-&gt;username}
+  &#123;$content_fetch[1]-&gt;created-&gt;by-&gt;last_name}
+  &#123;$content_fetch[1]-&gt;created-&gt;by-&gt;first_name}
+  &#123;$content_fetch[1]-&gt;created-&gt;by-&gt;email}
 
-  &#123$content_fetch[1]-&gt;modified-&gt;date}
-  &#123$content_fetch[1]-&gt;modified-&gt;by-&gt;username}
-  &#123$content_fetch[1]-&gt;modified-&gt;by-&gt;last_name}
-  &#123$content_fetch[1]-&gt;modified-&gt;by-&gt;first_name}
-  &#123$content_fetch[1]-&gt;modified-&gt;by-&gt;email}
+  &#123;$content_fetch[1]-&gt;modified-&gt;date}
+  &#123;$content_fetch[1]-&gt;modified-&gt;by-&gt;username}
+  &#123;$content_fetch[1]-&gt;modified-&gt;by-&gt;last_name}
+  &#123;$content_fetch[1]-&gt;modified-&gt;by-&gt;first_name}
+  &#123;$content_fetch[1]-&gt;modified-&gt;by-&gt;email}
 
-  &#123$content_fetch[1]-&gt;extension}
-  &#123*
-    And for each extension you have named, you will get an equally named class element below &#123$content_fetch[n]-&gt;extensions
+  &#123;$content_fetch[1]-&gt;extension}
+  &#123;*
+    And for each extension you have named, you will get an equally named class element below &#123;$content_fetch[n]-&gt;extensions
     e.g.
   *}
-  &#123$content_fetch[1]->extensions-&gt;summary-&gt;data}
-  &#123$content_fetch[1]-&gt;extensions-&gt;summary-&gt;length}
+  &#123;$content_fetch[1]->extensions-&gt;summary-&gt;data}
+  &#123;$content_fetch[1]-&gt;extensions-&gt;summary-&gt;length}
       </pre>
 
       <h5>Date structure of pager information</h5>
       <pre class="click-to-copy" title="Click to copy to clipboard">
-  &#123$pager_info-&gt;current}
-  &#123$pager_info-&gt;max}
-  &#123$pager_info-&gt;size}</pre>
+  &#123;$pager_info-&gt;current}
+  &#123;$pager_info-&gt;max}
+  &#123;$pager_info-&gt;size}</pre>
 
       <h5>Usefull smarty snippets for working with content_fetch</h5>
       <p>Below you find some code snippets you can use in your templates in conjunction with content_fetch</p>
@@ -355,17 +353,17 @@
             <li>
               When the default content block is the only one with the content to protect:
               <ol type="1">
-                <li>use all the logic inside the block itself even if the passwords are set on the template;</li>
-                <li>set the login form and passwords as close to the top of the content as possible when set inside the content block;</li>
-                <li>using any other content property to set the logic (as the <strong>Smarty data or logic that is specific to this page</strong>) may work on a typical setting but will leave the protected content vulnerable in certain circumstances;</li>
-                <li>keep in mind that there is a feature in CMSMS that will strip down the whole template and render only the default content, so following the above rules will prevent exposure of the protected content;</li>
+                <li>use all the logic inside the block itself even if the passwords are set on the template</li>
+                <li>set the login form and passwords as close to the top of the content as possible when set inside the content block</li>
+                <li>using any other content property to set the logic (as the <strong>Smarty data or logic that is specific to this page</strong>) may work on a typical setting but will leave the protected content vulnerable in certain circumstances</li>
+                <li>keep in mind that there is a feature in CMSMS that will strip down the whole template and render only the default content, so following the above rules will prevent exposure of the protected content</li>
               </ol>
             </li>
             <li>if you have more than the default content block:
                <ol type="1">
-                <li>preferably don't use the main block to keep the protected content, use a different block for it;</li>
-                <li>content blocks other than the main are not vulnerable to being exposed by the above described CMSMS feature;</li>
-                <li>if you must use it then follow the rules for the default content as in the previous suggestion;</li>
+                <li>preferably don't use the main block to keep the protected content, use a different block for it</li>
+                <li>content blocks other than the main are not vulnerable to being exposed by the above described CMSMS feature</li>
+                <li>if you must use it then follow the rules for the default content as in the previous suggestion</li>
               </ol>
             </li>
           </ul>
@@ -392,51 +390,51 @@
         <ul>
           <li><strong>action</strong> <em>(optional)</em> - possible values:
             <ul>
-              <li><em><strong>default</strong></em> <strong> <em>(default)</em></strong>: the default action for the module and can be omitted. On its own it does nothing, but can be used as a set action in conjunction with other parameters;</li>
-              <li><em><strong>set</strong> (legacy) (deprecated)</em>: use this action to distribute persistent parameters though different tags on the same page (helps with template readability), this action now being part of the default action can also be omitted;</li>
-              <li><em><strong>form</strong></em>: show either the <strong>login</strong> form or the <strong>logout</strong> form, depending on current user state;</li>
+              <li><em><strong>default</strong></em> <strong> <em>(default)</em></strong>: the default action for the module and can be omitted. On its own it does nothing, but can be used as a set action in conjunction with other parameters</li>
+              <li><em><strong>set</strong> (legacy) (deprecated)</em>: use this action to distribute persistent parameters though different tags on the same page (helps with template readability), this action now being part of the default action can also be omitted</li>
+              <li><em><strong>form</strong></em>: show either the <strong>login</strong> form or the <strong>logout</strong> form, depending on current user state</li>
             </ul>
           </li>
-          <li><strong>login_alias</strong> <em>(optional) (persistent) </em> - an existing page alias (defaults to no redirection): this will be used to redirect after login if needed;</li>
-          <li><strong>logout_alias</strong> <em>(optional) (persistent)</em> - an existing page alias (defaults to current page i.e. the page where the plugin is being used): this will be used to redirect after logout;</li>
-          <li><strong>timeout</strong> <em>(optional) (persistent)</em> - if set to a value higher than 0 it will set a cookie and use this value as minutes before login times out;</li>
-          <li><strong>cookie_name</strong> <em>(optional) (persistent)</em> - the name of the cookie (defaults to <strong>cp_auth</strong>);</li>
-          <li><strong>welcome_msg</strong> <em>(optional) (persistent)</em> - a message to be shown as a welcome text on the login form;</li>
-          <li><strong>protected_msg</strong> <em>(optional) (persistent)</em> - a message to replace the protected content (defaults to no message at all);</li>
-          <li><strong>error_msg</strong> <em>(optional) (persistent)</em> - an error message to be shown on password errors;</li>
+          <li><strong>login_alias</strong> <em>(optional) (persistent) </em> - an existing page alias (defaults to no redirection): this will be used to redirect after login if needed</li>
+          <li><strong>logout_alias</strong> <em>(optional) (persistent)</em> - an existing page alias (defaults to current page i.e. the page where the plugin is being used): this will be used to redirect after logout</li>
+          <li><strong>timeout</strong> <em>(optional) (persistent)</em> - if set to a value higher than 0 it will set a cookie and use this value as minutes before login times out</li>
+          <li><strong>cookie_name</strong> <em>(optional) (persistent)</em> - the name of the cookie (defaults to <strong>cp_auth</strong>)</li>
+          <li><strong>welcome_msg</strong> <em>(optional) (persistent)</em> - a message to be shown as a welcome text on the login form</li>
+          <li><strong>protected_msg</strong> <em>(optional) (persistent)</em> - a message to replace the protected content (defaults to no message at all)</li>
+          <li><strong>error_msg</strong> <em>(optional) (persistent)</em> - an error message to be shown on password errors</li>
         </ul>
         <p>Exclusive to form action:</p>
         <ul>
-          <li><strong>login_btn</strong> <em>(optional)</em> - text of the login button caption (defaults to Login);</li>
-          <li><strong>logout_btn</strong> <em>(optional)</em> - text of the logout button caption(defaults to Logout;</li>
-          <li><strong>form_id</strong> <em>(optional)</em> - login form id;</li>
-          <li><strong>form_class</strong> <em>(optional)</em> - login form class;</li>
-          <li><strong>in_pass_id</strong> <em>(optional)</em> - password input id;</li>
-          <li><strong>in_pass_class</strong> <em>(optional)</em> - password input class;</li>
-          <li><strong>button_id</strong> <em>(optional)</em> - both buttons id;</li>
-          <li><strong>button_class</strong> <em>(optional)</em> - both buttons class;</li>
+          <li><strong>login_btn</strong> <em>(optional)</em> - text of the login button caption (defaults to Login)</li>
+          <li><strong>logout_btn</strong> <em>(optional)</em> - text of the logout button caption(defaults to Logout</li>
+          <li><strong>form_id</strong> <em>(optional)</em> - login form id</li>
+          <li><strong>form_class</strong> <em>(optional)</em> - login form class</li>
+          <li><strong>in_pass_id</strong> <em>(optional)</em> - password input id</li>
+          <li><strong>in_pass_class</strong> <em>(optional)</em> - password input class</li>
+          <li><strong>button_id</strong> <em>(optional)</em> - both buttons id</li>
+          <li><strong>button_class</strong> <em>(optional)</em> - both buttons class</li>
         </ul>
         <p>The protect block tag accepts only one parameter:</p>
         <ul>
-          <li><strong>protected_msg</strong> <em>(optional)</em> - a message to replace the protected content (defaults to whatever was set on a previous persistent tag call);</li>
+          <li><strong>protected_msg</strong> <em>(optional)</em> - a message to replace the protected content (defaults to whatever was set on a previous persistent tag call)</li>
         </ul>
         <p>The protect modifier doesn't take any parameters.</p>
         <hr>
         <p>Example as a content block:</p>
-          <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect} ...content you want to protect... &#123;/protect} and a modifier </pre>
+          <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;protect} ...content you want to protect... &#123;/protect} and a modifier </pre>
         <p>Example as a content modifier:</p>
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;'protect this'|protect}</pre>
+        <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;'protect this'|protect}</pre>
 
         <h3>Quick Use</h3>
         <p>The plugin allows for fast deployment of a secure page. Content Protect will assign a <strong>Smarty</strong> variable, <strong>$cp_logged_in</strong> by default, with a boolean value flagging whether the current user is logged in or not.</p>
         <p>Example:</p>
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect action='form' passwords='pass1'}</pre>
+        <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content_protect action='form' passwords='pass1'}</pre>
 
         <p>This is a simple way to hide the content of a page from non-authorized users:</p>
         <div class="information" style="display:block;">
           <p>Use this on the page content!</p>
         </div>
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect action='form' passwords='pass1'}
+        <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content_protect action='form' passwords='pass1'}
   &#123;if $cp_logged_in}
     The allowed content....
   &#123;else}
@@ -450,7 +448,7 @@
           <p>Use this on the main template!</p>
         </div>
 
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content name=protected assign='protected'}
+        <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content name=protected assign='protected'}
   &#123;content_protect action='form' passwords='pass1'}
   &#123;if $cp_logged_in}
       &#123;$protected}
@@ -472,20 +470,20 @@
       </ul>
 
       <p>Put this on the field <strong>Smarty data or logic that is specific to this page</strong> found on the page <em><strong>_options tab</strong></em>:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect passwords='password1,passwor2,password3,passwordn'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content_protect passwords='password1,passwor2,password3,passwordn'}</pre>
       <p>You can set the passwords, and any other parameters on the initialization tag as most of the parameters are persistent through the same request.</p>
       <p>Put this on the top of your templates:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect passwords='password1,passwor2,password3,passwordn'}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content_protect passwords='password1,passwor2,password3,passwordn'}</pre>
 
       <h3>The Form Action</h3>
 
       <p>You can set all options on the tag call with this action. If you are using the quick way, this is all you need to set a Smarty variable which you can check anywhere on the template after this call.</p>
       <p>Other than that just place the tag where you want a login/logout form. The default <strong><em>form</em> action</strong> has default values for all form parameters, so the minimal tag is <strong>&#123;content_protect action='</strong><em>form</em><strong>'}</strong>.</p>
       <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect action=form}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;content_protect action=form}</pre>
       <p>An example with all the parameters you can use to customize the form:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Do we really need all this?!!! A complete form call *}
-      <&#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class'}
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;* Do we really need all this?!!! A complete form call *}
+      &#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class'}
       </pre>
       <p>You can use any of the persistent parameters with the form action if needed. However, the form specific parameters <strong>are not persistent</strong>.</p>
 
@@ -496,7 +494,7 @@
         </p>
       </div>
       <p>These are special actions with the sole purpose of allowing you to set persistent parameters on different tag calls, helping a bit with the readability of the tags: along the template. Just keep in mind that if you call it again, using the same parameters with different values, the last value will override all previous.</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Using the 'set' action to spread parameters through multiple calls *}
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;* Using the 'set' action to spread parameters through multiple calls *}
       &#123;* redirect Home *}
       &#123;content_protect action='set' logout_alias='home'}
       &#123;* set the time before a login expires *}
@@ -511,14 +509,14 @@
 
       <h4><strong>Content wrapping tags example.</strong></h4>
       <p>Use one of the following tags:
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;protect}whatever content you want protected.&#123;/protect}
       &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}</strong>
       </pre>
       </p>
 
       <h5>The protect block tag accepts only one parameter:</h5>
       <ul>
-        <li><em>(optional) <strong>protected_msg</strong></em> - a message to replace the protected content (defaults to whatever was set on a previous persistent tag call);</li>
+        <li><em>(optional) <strong>protected_msg</strong></em> - a message to replace the protected content (defaults to whatever was set on a previous persistent tag call)</li>
       </ul>
       <h5>The protect modifier tag doesn't accept parameters</h5>
       <p>For the time being the modifier doesn't require any parameter to work. It will use whatever parameters have been set previously.</p>
@@ -528,7 +526,7 @@
       <h4>Using The Form Action</h4>
 
       <p> An example with all the parameters you can use to customize the form:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Do we really need all this?!!! A complete form call which doesn't output nothing because the assign_output parameter is being used *}
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;* Do we really need all this?!!! A complete form call which doesn't output nothing because the assign_output parameter is being used *}
        &#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class' assign_output='login_form'}
        &#123;* by using assign_output='login_form' you can use &#123;$login_form} several times on the template *}
        &#123;$login_form}
@@ -537,13 +535,13 @@
       <h4>Using The Protect Block Tags</h4>
 
       <p>Use one of the following tags:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
+      <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;protect}whatever content you want protected.&#123;/protect}
       &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
       </pre>
 
     <h4>Using The Protect Modifier</h4>
     <p>Use any one of the following methods:</p>
-    <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;$protect_me = 'whatever content you want protected.'}
+    <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;$protect_me = 'whatever content you want protected.'}
       &#123;$protect_me|protect}
       &#123;* or *}
       &#123;'Some text I want to have protected'|protect}
@@ -630,12 +628,12 @@
         </li>
         <li> <strong>sort</strong> - sort order:
           <ul>
-            <li><strong>d</strong> - sort by date ascending;</li>
-            <li><strong>dd</strong> - sort by date descending;</li>
-            <li><strong>s</strong> - sort by size ascending;</li>
-            <li><strong>sd</strong> - sort by size descending;</li>
-            <li><strong>ns</strong> - sort by name ascending;</li>
-            <li><strong>nd</strong> - sort by name descending;</li>
+            <li><strong>d</strong> - sort by date ascending</li>
+            <li><strong>dd</strong> - sort by date descending</li>
+            <li><strong>s</strong> - sort by size ascending</li>
+            <li><strong>sd</strong> - sort by size descending</li>
+            <li><strong>ns</strong> - sort by name ascending</li>
+            <li><strong>nd</strong> - sort by name descending</li>
           </ul>
           (default is sort by filetype then file name). <em>(optional)</em></li>
         <li> <strong>delimiter='your delimiter'</strong> - Default is _, this is the element that will be stripped and replaced with spaces, this enables you to have accessible file name links while also having pretty looking file names on the front end.<em>(optional)</em></li>
@@ -696,7 +694,7 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="mod_action_link" class="al">&#123;mod_action_link} <span class="small">Create a link to a module action</span></h3>
+    <h3 id="mod_action_link" class="al">&#123;mod_action_link} <span class="small">Get a link to a module action</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin that can create a link to a module action.</p>
       <h4>Parameters</h4>
@@ -721,7 +719,7 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="mod_action_url" class="al">&#123;mod_action_url} <span class="small">Create an url to a module action</span></h3>
+    <h3 id="mod_action_url" class="al">&#123;mod_action_url} <span class="small">Get the URL of a module action</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin that can create an url to a module action.</p>
       <h4>Parameters</h4>
@@ -741,7 +739,7 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="sess_erase" class="al">&#123;sess_erase} <span class="small">Remove a session variable recorded by &#123sess_put}</span></h3>
+    <h3 id="sess_erase" class="al">&#123;sess_erase} <span class="small">Remove a session variable recorded by &#123;sess_put}</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin that will erase data from the PHP session.</p>
       <h4>Parameters</h4>
@@ -768,13 +766,13 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="trigger_403" class="al">&#123;trigger_403} <span class="small">Trigger a 403 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <h3 id="trigger_403" class="al">&#123;trigger_403} <span class="small">Trigger a 403 error</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin that will trigger a server 403 error. The way the error will be handled depends on whether there is a custom CMSMS 403 error page set in Content Manager or not.</p>
       <h4>Parameters</h4>
       <ul>
-        <li><strong>active</strong> -Needs to be &apos;truthy&apos; (non-0 number, true, or non-empty string) to trigger the error;</li>
-        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'Permission denied!'</strong>);</li>
+        <li><strong>active</strong> -Needs to be &apos;truthy&apos; (true, non-0 number, or non-empty string) to trigger the error</li>
+        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'Permission denied!'</strong>)</li>
       </ul>
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;trigger_403 msg='this' active=$do_trigger}</pre>
@@ -782,12 +780,12 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="trigger_404" class="al">&#123;trigger_404} <span class="small">Trigger a 404 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <h3 id="trigger_404" class="al">&#123;trigger_404} <span class="small">Trigger a 404 error</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin that will trigger a server 404 error. The way the error will be handled depends on whether there is a custom CMSMS 404 error page set in Content Manager or not.</p>
       <h4>Parameters</h4>
       <ul>
-        <li><strong>active</strong> - Needs to be &apos;truthy&apos; (non-0 number, true, or non-empty string) to trigger the error;</li>
+        <li><strong>active</strong> - Needs to be &apos;truthy&apos; (true, non-0 number, or non-empty string) to trigger the error</li>
         <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'This content is not available'</strong>;)</li>
       </ul>
       <p>Example:</p>
@@ -796,7 +794,7 @@
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="xt_anchor_link" class="al">&#123;xt_anchor_link} <span class="small">Generate a link to an anchor on the same page</span></h3>
+    <h3 id="xt_anchor_link" class="al">&#123;xt_anchor_link} <span class="small">Get a link to an anchor on the same page</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin to generate a link to an anchor that is on the same page.</p>
       <h4>Parameters</h4>
@@ -806,14 +804,14 @@
         <li><strong>urlonly</strong> - <em>(bool)</em> Optionally only generate the URL portion of the link. see smx::anchor_url()</li>
         <li><strong>assign</strong> - <em>(string></em> Optionally assign the output of the plugin to the named Smarty variable.</li>
       </ul>
-      <p>Any other arguments to the Smarty plugin will be added as attributes to the link generated.</p>
+      <p>Any other arguments to the plugin will be added as attributes to the link generated.</p>
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_anchor_link name=bottom class="anchor_class" id="anchor_id"}</pre>
     </div>
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="xt_getvar" class="al">&#123;xt_getvar} <span class="small">Retrieve a variable value recorded by &#123xt_setvar}</span></h3>
+    <h3 id="xt_getvar" class="al">&#123;xt_getvar} <span class="small">Get a variable value recorded by &#123;xt_setvar}</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin to retieve a recorded variable, or a default value if the specified variable is not recorded</p>
       <h4>Parameters</h4>
@@ -854,17 +852,17 @@
         <li><strong>varnameN</strong> - Identifier of Nth variable to be set or cleared</li>
       </ul>
       <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_setvar name1=&apos;woowoo is my name&apos; name2=&apos;_unset_&apos;}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_setvar name=&apos;woowoo is my name&apos; finished=&apos;_unset_&apos;}</pre>
     </div>
   </li>
 {***********************************************************************}
   <li class="accordion-list-item">
-    <h3 id="xt_unsetvar" class="al">&#123;xt_unsetvar} <span class="small">Clear variable(s) recorded by &#123xt_setvar}</span></h3>
+    <h3 id="xt_unsetvar" class="al">&#123;xt_unsetvar} <span class="small">Clear variable(s) recorded by &#123;xt_setvar}</span></h3>
     <div class="accordion-list-item-body">
       <p>A plugin to clear one or more recorded variables, specified either as a comma-separated series of names, or one or more parameter-specifed individual names</p>
       <h4>Parameters</h4>
       <ul>
-        <li><strong>unset</strong> - Clear all variables specified in the value, a comma-separated series</li>
+        <li><strong>unset</strong> - Clear all variables (a comma-separated series) specified in the value</li>
         <li><strong>varname1</strong> - Identifier of 1st variable to be cleared</li>
         <li style="list-style-type:none">...</li>
         <li><strong>varnameN</strong> - Identifier of Nth variable to be cleared</li>
