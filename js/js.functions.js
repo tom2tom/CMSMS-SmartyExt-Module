@@ -1,9 +1,8 @@
-
 (function(global, $, jQuery, Cookies, help_functions)
 {
-  let OE = global.OE;
-  let messages_template = '<aside id="helper_message" class="message pagemcontainer" role="status"><p>{0}</p></aside>';
-  let errors_template = '<aside id="helper_error" class="message pageerrorcontainer" role="alert"><p>{0}</p></aside>';
+  var OE = global.OE;
+  var messages_template = '<aside id="helper_message" class="message pagemcontainer" role="status"><p>{0}</p></aside>';
+  var errors_template = '<aside id="helper_error" class="message pageerrorcontainer" role="alert"><p>{0}</p></aside>';
   
   jQuery(document).ready(function()
   {
@@ -140,7 +139,7 @@
    */
   help_functions.help_error_message =  function (message_text)
   {
-    let output = errors_template.format(message_text);
+    var output = errors_template.format(message_text);
     $('#helper_error').detach();
     $('#oe_mainarea').prepend(output);
     $('#helper_error').hide();
@@ -154,7 +153,7 @@
    */
   help_functions.help_message =  function (message_text)
   {
-    let output = messages_template.format(message_text);
+    var output = messages_template.format(message_text);
     $('#helper_message').detach();
     $('#oe_mainarea').prepend(output);
     $('#helper_message').hide();

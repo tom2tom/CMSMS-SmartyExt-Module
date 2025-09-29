@@ -1,18 +1,19 @@
 <?php
 
-# C
-
-# F
+// F
 $lang['friendlyname'] = 'Smarty Extensions';
 
-# H
-
-# M
+// M
 $lang['moddescription'] = 'CMSMS Smarty Tools';
 
-# P
+// P
 $lang['postinstall'] = 'Smarty Extensions is now installed';
 $lang['postuninstall'] = 'Smarty Extensions has been removed';
 
-# S
-?>
+/* tab labels are:
+'About'
+'Class'
+'General'
+'Plugins'
+"What's New"
+*/

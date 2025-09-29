@@ -1,125 +1,14 @@
-<h2>Smarty plugins</h2>
-<p>This is a list of the plugins available from this module with instructions and sample uses.</p>
+<h2>Smarty Plugins</h2>
+<p>This is a list of the plugins available from this module, with instructions and example usage.</p>
 
-{*******************************************************************************}
 <ul class="accordion-list">
   <li class="accordion-list-item">
-    <h3 class="al">&#123;mod_action_url} <span class="small">Create an url to a module action</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin that can create an url to a module action.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>module</strong> - The module to create a link to. This argument is optional, the system will attempt to detect the current module name (if within a module action)</li>
-        <li><strong>action</strong> (default) - The action to call within the module</li>
-        <li><strong>page</strong> - Specify the destination page</li>
-        <li><strong>jsfriendly</strong> | <strong>forjs</strong> - Turns on the urlonly parameter, and indicates that javascript friendly urls are output.</li>
-        <li><strong>forajax</strong> - Turns on the jsfriendly parameter (and the urlonly parameter), and also appends showtemplate=false to the URL output for AJAX requests</li>
-        <li><strong>assign</strong> - Assign the output of the plugin to the named smarty variable.</li>
-      </ul>
-
-      <p>Any other parameters to the smarty plugin will be added to the URL generated.</p>
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;mod_action_url module='News' action='fesubmit' assign='foo'}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;mod_action_link} <span class="small">Create a link to a module action</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin that can create a link to a module action.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>module</strong> - The module to create a link to. This argument is optional, the system will attempt to detect the current module name (if within a module action)</li>
-        <li><strong>action</strong> (default) - The action to call within the module</li>
-        <li><strong>text</strong> - The text to put in the link</li>
-        <li><strong>page</strong> - Specify the destination page</li>
-        <li><strong>urlonly</strong> - Instead of generating a link, generate just the url</li>
-        <li><strong>jsfriendly</strong> | <strong>forjs</strong> - Turns on the urlonly parameter, and indicates that javascript friendly urls are output.</li>
-        <li><strong>forajax</strong> - Turns on the jsfriendly parameter (and the urlonly parameter), and also appends showtemplate=false to the URL output for AJAX requests</li>
-        <li><strong>confmessage</strong> - A confirmation message to display when the link is clicked.</li>
-        <li><strong>image</strong> - An image to use on the link</li>
-        <li><strong>imageonly</strong> - If an image is specified, create a link only consisting of the image. The text will be used for the title attribute</li>
-        <li><strong>assign</strong> - Assign the output of the plugin to the named smarty variable.</li>
-      </ul>
-
-      <p>Any other arguments to the smarty plugin will be added to the URL generated.</p>
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;mod_action_link module='News' action='fesubmit' text='Submit a New News Article'}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;xt_anchor_link} <span class="small">Generate a link to an anchor on the same page</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin to generate a link to an anchor that is on the same page.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>n</strong> | <strong>name</strong> - <em>(string)</em> The name of the anchor to link to.</li>
-        <li><strong>text</strong> - <em>(string></em> The text portion of the link. If not specified, the anchor name will be used.</li>
-        <li><strong>urlonly</strong> - <em>(bool)</em> Optionally only generate the URL portion of the link. see smx::anchor_url()</li>
-        <li><strong>assign</strong> - <em>(string></em> Optionally assign the output of the plugin to the named smarty variable.</li>
-      </ul>
-
-      <p>Any other arguments to the smarty plugin will be added as attributes to the link generated.</p>
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_anchor_link name=bottom class="anchor_class" id="anchor_id"}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;sess_put} <span class="small">Store data in the user session</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin that can store data in the user session. This data is then accessible via the $smarty.session array in subsequent pages.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>var</strong> - The name of the variable to create in the session.</li>
-        <li><strong>value</strong> - The desired value of the variable.</li>
-      </ul>
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;sess_put var='test' value='blah'}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;sess_erase} <span class="small">Erase data from the user session</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin that can erase data from the user session.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>var</strong> - The name of the variable to erase in the session.</li>
-      </ul>
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;sess_erase var='test'}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;xt_repeat} <span class="small">Repeating text</span></h3>
-    <div class="accordion-list-item-body">
-      <p>Another smarty plugin that will allow repeating text</p>
-      <p>Parameters:</p>
-      <ul>
-        <li><strong>text</strong> - The text to be repeated</li>
-        <li><strong>count</strong> - The number of times it should be repeated</li>
-        <li><strong>assign</strong> - Assign the output to the specified smarty variable</li>
-      </ul>
-
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_repeat text='this' count='5'}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;content_fetch} <span class="small">Fetch and reuse CMSMS content</span></h3>
+    <h3 id="content_fetch" class="al">&#123;content_fetch} <span class="small">Fetch and reuse CMSMS content</span></h3>
     <div class="accordion-list-item-body">
       <p>A fork of <strong><em>&#123;content_dump}</em></strong> from Nils Haack. Still a work in progress, so keep checking these docs for changes in parameters and behaviour.</p>
-      <p>A <em>'Swiss Army Knife'</em> for CMSMS content fetching, giving you the ability to fetch content and insert it into a single page. It offers a variety of independent parameters than can be combined to cater for a lot of your site's internal content distribution needs.</p>
+      <p>A <em>'Swiss Army Knife'</em> for CMSMS content fetching, giving you the ability to fetch content and insert it into a single page. It offers a variety of independent parameters that can be combined to cater for a lot of your site's internal content distribution needs.</p>
       <p>Just attach some parameters and limit/organize the output to your data requirements. The Smarty output allows you to freely design the results in your template or content block (from the regular editors view - though it is recommended to do it in the template). With Smarty, you can even control the output by limiting it to specific values (e.g. only user 'John Doe') or use modifiers to further manipulate the content.</p>
-
       <h4>Parameters</h4>
-      <p>Following a description of the available parameters.</p>
-
-      <p>Parameters:</p>
       <ul>
         <li><strong>block_name</strong> - The name of the content block to fetch from (default <strong>content_en</strong>);</li>
         <li><strong>start_id</strong> - Defines a starting point for the content fetching (default <strong>-1</strong> meaning all matching content);</li>
@@ -153,8 +42,7 @@
           </ul>
         </li>
         <li>
-          <strong>depth</strong> - Filter results by hierarchy start point and number of levels. It takes two integer values seperated by comma such as '-1,3', '-1' being the starting point, in this case the root and '3' the number of levels (or
-          how deep) to fetch (see extended help and examples below). If used, both values are mandatory;
+          <strong>depth</strong> - Filter results by hierarchy start point and number of levels. It takes two integer values seperated by comma such as '-1,3', '-1' being the starting point, in this case the root and '3' the number of levels (or how deep) to fetch (see extended help and examples below). If used, both values are mandatory;
         </li>
         <li><strong>exclude</strong> - Exclude content by id, accepting comma seperated lists of integers if needed;</li>
         <li><strong>this_only</strong> - Fetch a particular content from pages by id;</li>
@@ -230,12 +118,12 @@
           </ul>
         </li>
         <li><strong>second_sort_order</strong> - determines the direction of the sorting filter, whether it is <em>'up'</em> or <em>'down'</em> (default <strong>'up'</strong> as in alphabetically A to B);</li>
-        <li><strong>assign</strong> - Assign the output to the specified smarty variable (default <strong>content_fetch</strong> meaning the result will be available via &#123;$content_fetch});</li>
+        <li><strong>assign</strong> - Assign the output to the specified Smarty variable (default <strong>content_fetch</strong> meaning the result will be available via &#123;$content_fetch});</li>
       </ul>
       <hr>
       <h2>Extended Help and Examples</h2>
       <h3>Debugging</h3>
-      <p>You can debug the plugin out put by simply surrounding the assigned Smarty variable tag with HTML 'pre' tags and using a print_r modifier:</p>
+      <p>You can debug the plugin output by simply surrounding the assigned Smarty variable tag with HTML 'pre' tags and using a print_r modifier:</p>
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch assign='my_var_name'}
@@ -400,7 +288,6 @@
   &#123$content_fetch[1]-&gt;extension}
   &#123*
     And for each extension you have named, you will get an equally named class element below &#123$content_fetch[n]-&gt;extensions
-
     e.g.
   *}
   &#123$content_fetch[1]->extensions-&gt;summary-&gt;data}
@@ -453,109 +340,9 @@
       <p>Original Author of the content_dump plugin: Nils Haack &lt;hello@opticalvalve.com&gt;</p>
     </div>
   </li>
-  {*******************************************************************************}
+{***********************************************************************}
   <li class="accordion-list-item">
-    <h3 class="al">&#123;files_list} <span class="small">List files and folders</span></h3>
-    <div class="accordion-list-item-body">
-      <p>A smarty plugin that lists files and folders in a specific directory with file name, file size, file date and other optional info. Simple as it may look, it is a sophisticated plugin with many features including files download and download link obfuscation, sorting, limits, etc.</p>
-      <p>The plugin has the ability to list files under the root of the CMS Made Simple installation thus making easier to prevent file hot linking. Together with a module or plugin that protects access to pages it makes it impossible to share links to files.</p>
-      <p>The plugin returns a object (which can easily be converted to an array) which properties hold the needed data (most of it in the form of arrays) to be used in templates in any way you wish.</p>
-      <p>Parameters:</p>
-      <ul>
-        <li> <strong>folder</strong> - folder to list files from (default is <strong>'uploads'</strong>). <em>(optional)</em></li>
-        <li> <strong>root</strong> - a full path from the root of the account file system, required if the files are located under the site installation root. (default is <strong>''</strong>) i.e. an empty string. When empty, the plugin will derive the above <strong>folder</strong> parameter starting from the root of the site. Having a full path from the root, allows to list files from non-public folders below the site root. Those files can be downloaded but no files can be executed.<em>(optional)</em><br>
-          Note: Having root set to anything but an empty string automatically activates download obfuscation for security purposes.</li>
-        <li> <strong>show_hidden</strong> - whether to show hidden files. Default is false. Keep in mind that the downloads count data file is a hidden file and that its default location is the same as <strong>folder</strong>. <em>(optional)</em></li>
-        <li> <strong>count_downloads</strong> - whether to count the downloads. Default is false. Keep in mind that the downloads count data file is a hidden file and that its default location is the same as <strong>folder</strong>. <em>(optional)</em></li>
-        <li> <strong>counter_db_dir</strong> - where the downloads data file should be located.  Default location is the same as <strong>folder</strong>. <em>(optional)</em><br>
-          Note: changing this setting without moving the file to the set location will cause data being lost as a new file will be created as soon as a new download is attempted.<br>
-          Note: to reset the downloads count you'll need to delete or edit the downloads data file.
-        </li>
-        <li>
-          <strong>dl_counter_db_fn</strong> - the name of the downloads data file, default is <em>'.counter_db'</em>.<em>(optional)</em><br>
-          Note: in most non windows OSs file systems a file starting with a dot is hidden by default.
-        </li>
-        <li>
-          <strong>strip_extension</strong> - whether to hide the file extension from the list, default is <em>false</em>.<em>(optional)</em>
-        </li>
-        <li>
-          <strong>obfuscate_download</strong> - whether to obfuscate the location of the files, default is <em>true</em>.<em>(optional)</em>
-        </li>
-        <li>
-          <strong>security_token</strong> - whether to require a security token to allow to download, default is <em>true</em>.<em>(optional)</em>
-        </li>
-        <li>
-          <strong>security_token_qv</strong> - the name of the query variable for the security token, default is <em>_st</em>.<em>(optional)</em>
-        </li>
-        <li> <strong>sort</strong> - sort order:
-          <ul>
-            <li><strong>d</strong> - sort by date ascending;</li>
-            <li><strong>dd</strong> - sort by date descending;</li>
-            <li><strong>s</strong> - sort by size ascending;</li>
-            <li><strong>sd</strong> - sort by size descending;</li>
-            <li><strong>ns</strong> - sort by name ascending;</li>
-            <li><strong>nd</strong> - sort by name descending;</li>
-          </ul>
-          (default is sort by filetype then file name). <em>(optional)</em></li>
-        <li> <strong>delimiter='your delimiter'</strong> - Default is _, this is the element that will be stripped and replaced with spaces, this enables you to have accessible file name links while also having pretty looking file names on the front end.<em>(optional)</em></li>
-        <li> <strong>showsize='false'</strong> - Default is true, but setting this to false will disable file size being shown.<em>(optional)</em></li>
-          {* <li> <strong>fileextension='extension'</strong> - Add any extensions tags you want included in the removal list including the dot. Defaults are .pdf, .doc, .docx, .txt, .rtf, .avi, .mov, .exe.<em>(optional)</em></li> *}
-        <li> <strong>date='false'</strong> - Default is true, but setting this to false will disable date being shown.<em>(optional)</em></li>
-        <li> <strong>dateformat='Y-m-d'</strong> - <a href="http://php.net/manual/en/function.date.php" target="_blank">Date format</a>.<em>(optional)</em></li>
-        <li> <strong>browse_subdirs='1'</strong> - Allow browse subdirectories. Default is 0.<em>(optional)</em></li>
-          {* <li> <strong>prettyurls='true'</strong> - Default is false. This only becomes an issue when used in conjunction with the browsesubdirs parameter.<em>(optional)</em></li> *}
-        <li> <strong>listtype='ol'</strong> - Default is ul. This parameter allows you to specify whether your list should be an Ordered or Unordered list. Only options available are ul and ol.<em>(optional)</em></li>
-        <li> <strong>maxentries='10'</strong> - Default is all. This parameter allows you to specify the maximum number of files/folders to display.<em>(optional)</em></li>
-        <li> <strong>target='_blank'</strong> - Default is none. Possible options are _blank, _self, _parent, _top.<em>(optional)</em></li>
-        <li> <strong>tracking='original'</strong> - Default is universal. Specify what version of the analytics event tracking code appears. Possible options are universal or original.<em>(optional)</em></li>
-      </ul>
-        <p>Example:</p>
-        <pre class="click-to-copy" title="Click to copy to clipboard">&#123;files_list folder='myfiles'}</pre>
-      <p>This plugin is still a work in progress, so there are some bugs yet to be fixed. Do some thorough tests to see if it fits your needs.</p>
-      <p>You can use the template below as a starting point to build your own template:</p>
-
-      <pre class="click-to-copy" title="Click to copy to clipboard">
-  &lt;ul&gt;
-    &#123;foreach $files_list-&gt;files as $one}
-      &lt;li&gt;
-        &#123;if $one.sub_type=='image'}
-            &#123;*
-              if you wish to use thumbs by default the folder name is thumbs
-              &lt;a href="&#123;$one.url}"&gt;&lt;img src="&#123;$one.thumbs_url}" alt="&#123;$one.name}"&gt;&lt;/a&gt;
-              but that can be overriden by using the thumbs_folder='foldername' parameter on the tag.
-            *}
-          &lt;a href="&#123;$one.url}"&gt;&lt;img src="&#123;$one.url}" alt="&#123;$one.name}"&gt;&lt;/a&gt;
-        &#123;else}
-         &lt;a href="&#123;$one.url}"&gt;&#123;$one.name}&lt;/a&gt;
-        &#123;/if}
-        &lt;ul&gt;
-          &lt;li&gt;name: &#123;$one.name}&lt;/li&gt;
-          &lt;li&gt;type: &#123;$one.type}&lt;/li&gt;
-          &lt;li&gt;url: &#123;$one.url}&lt;/li&gt;
-        &#123;if $one.type == 'file'}
-          &lt;li&gt;file_ext: &#123;$one.file_ext}&lt;/li&gt;
-          &lt;li&gt;sub_type: &#123;$one.sub_type}&lt;/li&gt;
-          &lt;li&gt;title: &#123;$one.title}&lt;/li&gt;
-          &lt;li&gt;size: &#123;$one.size}&lt;/li&gt;
-          &lt;li&gt;date: &#123;$one.date}&lt;/li&gt;
-          &#123;if isset($one.download_count)}&lt;li&gt;downloads: &#123;$one.download_count}&lt;/li&gt;&#123;/if}
-        &#123;elseif $one.type == 'dir'}
-          &lt;li&gt;file_ext: &#123;$one.file_ext}&lt;/li&gt;
-          &lt;li&gt;title: &#123;$one.title}&lt;/li&gt;
-          &lt;li&gt;date: &#123;$one.date}&lt;/li&gt;
-        &#123;/if}
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &#123;/foreach}
-  &lt;/ul&gt;
-  &lt;hr&gt;
-  Total Size Text: &#123;$files_list-&gt;total_size_text}
-  Total Size: &#123;$files_list-&gt;total_size}</pre>
-    </div>
-  </li>
-  {*******************************************************************************}
-  <li class="accordion-list-item">
-    <h3 class="al">&#123;content_protect} <span class="small">Protect content with a password</span></h3>
+    <h3 id="content_protect" class="al">&#123;content_protect} <span class="small">Protect content with a password</span></h3>
     <div class="accordion-list-item-body">
       <p>This is a fork of <strong>page_protect</strong> by Jo Morg. Same code base, a few differences emerged  from being integrated in a module, in particular the lack of need to initialize the plugin as in the original plugin.<br>
         This plugin allows you to protect a number of pages with one or more passwords either by being set once per each page you want to protect, or by being set on a page template, allowing you to protect all pages connected to that template. It is complemented by a block plugin <code><strong>&#123;protect} <em>...content you want to protect...</em> &#123;/protect}</strong></code>  and a modifier <code><strong>&#123;'protect this'|protect}</strong></code></p>
@@ -601,8 +388,7 @@
           </p>
         </div>
 
-        <p>Parameters:</p>
-
+        <h4>Parameters</h4>
         <ul>
           <li><strong>action</strong> <em>(optional)</em> - possible values:
             <ul>
@@ -699,7 +485,8 @@
       <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;content_protect action=form}</pre>
       <p>An example with all the parameters you can use to customize the form:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Do we really need all this?!!! A complete form call *}
-  <&#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class'}</pre>
+      <&#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class'}
+      </pre>
       <p>You can use any of the persistent parameters with the form action if needed. However, the form specific parameters <strong>are not persistent</strong>.</p>
 
       <h3>The Default and Set Actions</h3>
@@ -710,23 +497,23 @@
       </div>
       <p>These are special actions with the sole purpose of allowing you to set persistent parameters on different tag calls, helping a bit with the readability of the tags: along the template. Just keep in mind that if you call it again, using the same parameters with different values, the last value will override all previous.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Using the 'set' action to spread parameters through multiple calls *}
-  &#123;* redirect Home *}
-  &#123;content_protect action='set' logout_alias='home'}
-  &#123;* set the time before a login expires *}
-  &#123;content_protect action='set' timeout=10}
-  &#123;* set the message to show in case the authentication fails *}
-  &#123;content_protect action='set' error_msg='Oops! Wrong pass, mate! Check your notes...'}
-  &#123;* setting all the above in a single tag call could lead to errors *}</pre>
-
+      &#123;* redirect Home *}
+      &#123;content_protect action='set' logout_alias='home'}
+      &#123;* set the time before a login expires *}
+      &#123;content_protect action='set' timeout=10}
+      &#123;* set the message to show in case the authentication fails *}
+      &#123;content_protect action='set' error_msg='Oops! Wrong pass, mate! Check your notes...'}
+      &#123;* setting all the above in a single tag call could lead to errors *}
+      </pre>
 
       <h3>The Protect Tags</h3>
       <p>These tags are block smarty tags, and can be used several times on the page in pairs, i.e: an opening tag and a closing tag. The opening tag accepts only one parameter, the <strong>protected_msg</strong> which overrides the default one if set. This is a per occurrence tag, meaning that if it is set on the <em><strong>default</strong></em> or  <em><strong>set</strong></em> actions it is persistent, but if set on a <strong>&#123;protect}</strong> tag it affects only the tag where it is used and doesn't persist to the next occurrence.</p>
 
       <h4><strong>Content wrapping tags example.</strong></h4>
       <p>Use one of the following tags:
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
-  &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}</strong>
-        </pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
+      &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}</strong>
+      </pre>
       </p>
 
       <h5>The protect block tag accepts only one parameter:</h5>
@@ -741,18 +528,18 @@
       <h4>Using The Form Action</h4>
 
       <p> An example with all the parameters you can use to customize the form:</p>
-        <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Do we really need all this?!!! A complete form call which doesn't output nothing because the assign_output parameter is being used *}
-  &#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class' assign_output='login_form'}
-  &#123;* by using assign_output='login_form' you can use &#123;$login_form} several times on the template *}
-  &#123;$login_form}
-    </pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;* Do we really need all this?!!! A complete form call which doesn't output nothing because the assign_output parameter is being used *}
+       &#123;content_protect action='form' login_btn='Let Me In!' logout_btn='Bye Bye!' form_class='css_form' form_id='css_my_form' in_pass_id='css_passwrdid' in_pass_class='css_passwrd_class' button_id='css_btn_id' button_class='css_btn_class' assign_output='login_form'}
+       &#123;* by using assign_output='login_form' you can use &#123;$login_form} several times on the template *}
+       &#123;$login_form}
+      </pre>
 
       <h4>Using The Protect Block Tags</h4>
 
       <p>Use one of the following tags:</p>
-    <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
-    &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
-    </pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">  &#123;protect}whatever content you want protected.&#123;/protect}
+      &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
+      </pre>
 
     <h4>Using The Protect Modifier</h4>
     <p>Use any one of the following methods:</p>
@@ -760,25 +547,21 @@
       &#123;$protect_me|protect}
       &#123;* or *}
       &#123;'Some text I want to have protected'|protect}
-    &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
+      &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
     </pre>
 
   <h4>Passwords</h4>
   <p>The passwords parameter can accept a range of values, from a single password, a comma separated list of passwords, or an array of values:</p>
 
     <pre class="click-to-copy" title="Click to copy to clipboard">
-
 <strong>&#123;content_protect passwords='pass1'}</strong>
     </pre>
 
-
     <pre class="click-to-copy" title="Click to copy to clipboard">
-
 <strong>&#123;content_protect passwords='pass1,'pass2','pass3'}</strong>
     </pre>
 
     <pre class="click-to-copy" title="Click to copy to clipboard">
-
 &#123;* Use smarty syntax to create an array *}
 <strong>&#123;$passwords=['pass1','pass2','pass3']}</strong>
 
@@ -796,8 +579,6 @@
 
       <h3>Notes</h3>
 
-
-
       <h4>Persistent Parameters</h4>
       <p>Some of the parameters used by this plugin are persistent for the duration of the request, that is to say, through all of the current rendered page. This means that you can set them once, knowing they will be used later on the same request on subsequent calls to the plugin. That also means that they can be changed on subsequent calls, if needed.</p>
 
@@ -813,37 +594,283 @@
 
     </div>
   </li>
-  {*******************************************************************************}
+{***********************************************************************}
   <li class="accordion-list-item">
-    <h3 class="al">&#123;trigger_404} <span class="small">Trigger a 404 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <h3 id="files_list" class="al">&#123;files_list} <span class="small">List files and folders</span></h3>
     <div class="accordion-list-item-body">
-      <p>A smarty plugin that will trigger a server 404 error. The way the error will be handled depends on whether there is a custom CMSMS 404 error page set in Content Manager or not.</p>
-      <p>Parameters:</p>
+      <p>A plugin that lists files and folders in a specific directory with file name, file size, file date and other optional info. Simple as it may look, it is a sophisticated plugin with many features including files download and download link obfuscation, sorting, limits, etc.</p>
+      <p>The plugin has the ability to list files under the root of the CMS Made Simple installation thus making easier to prevent file hot linking. Together with a module or plugin that protects access to pages it makes it impossible to share links to files.</p>
+      <p>The plugin returns a object (which can easily be converted to an array) which properties hold the needed data (most of it in the form of arrays) to be used in templates in any way you wish.</p>
+      <h4>Parameters</h4>
       <ul>
-        <li><strong>active</strong> - Needs to be 1, true, or a non-empty string to trigger the error;</li>
-        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'This content is not available'</strong>;)</li>
+        <li> <strong>folder</strong> - folder to list files from (default is <strong>'uploads'</strong>). <em>(optional)</em></li>
+        <li> <strong>root</strong> - a full path from the root of the account file system, required if the files are located under the site installation root. (default is <strong>''</strong>) i.e. an empty string. When empty, the plugin will derive the above <strong>folder</strong> parameter starting from the root of the site. Having a full path from the root, allows to list files from non-public folders below the site root. Those files can be downloaded but no files can be executed.<em>(optional)</em><br>
+          Note: Having root set to anything but an empty string automatically activates download obfuscation for security purposes.</li>
+        <li> <strong>show_hidden</strong> - whether to show hidden files. Default is false. Keep in mind that the downloads count data file is a hidden file and that its default location is the same as <strong>folder</strong>. <em>(optional)</em></li>
+        <li> <strong>count_downloads</strong> - whether to count the downloads. Default is false. Keep in mind that the downloads count data file is a hidden file and that its default location is the same as <strong>folder</strong>. <em>(optional)</em></li>
+        <li> <strong>counter_db_dir</strong> - where the downloads data file should be located.  Default location is the same as <strong>folder</strong>. <em>(optional)</em><br>
+          Note: changing this setting without moving the file to the set location will cause data being lost as a new file will be created as soon as a new download is attempted.<br>
+          Note: to reset the downloads count you'll need to delete or edit the downloads data file.
+        </li>
+        <li>
+          <strong>dl_counter_db_fn</strong> - the name of the downloads data file, default is <em>'.counter_db'</em>.<em>(optional)</em><br>
+          Note: in most non windows OSs file systems a file starting with a dot is hidden by default.
+        </li>
+        <li>
+          <strong>strip_extension</strong> - whether to hide the file extension from the list, default is <em>false</em>.<em>(optional)</em>
+        </li>
+        <li>
+          <strong>obfuscate_download</strong> - whether to obfuscate the location of the files, default is <em>true</em>.<em>(optional)</em>
+        </li>
+        <li>
+          <strong>security_token</strong> - whether to require a security token to allow to download, default is <em>true</em>.<em>(optional)</em>
+        </li>
+        <li>
+          <strong>security_token_qv</strong> - the name of the query variable for the security token, default is <em>_st</em>.<em>(optional)</em>
+        </li>
+        <li> <strong>sort</strong> - sort order:
+          <ul>
+            <li><strong>d</strong> - sort by date ascending;</li>
+            <li><strong>dd</strong> - sort by date descending;</li>
+            <li><strong>s</strong> - sort by size ascending;</li>
+            <li><strong>sd</strong> - sort by size descending;</li>
+            <li><strong>ns</strong> - sort by name ascending;</li>
+            <li><strong>nd</strong> - sort by name descending;</li>
+          </ul>
+          (default is sort by filetype then file name). <em>(optional)</em></li>
+        <li> <strong>delimiter='your delimiter'</strong> - Default is _, this is the element that will be stripped and replaced with spaces, this enables you to have accessible file name links while also having pretty looking file names on the front end.<em>(optional)</em></li>
+        <li> <strong>showsize='false'</strong> - Default is true, but setting this to false will disable file size being shown.<em>(optional)</em></li>
+{*      <li> <strong>fileextension='extension'</strong> - Add any extensions tags you want included in the removal list including the dot. Defaults are .pdf, .doc, .docx, .txt, .rtf, .avi, .mov, .exe.<em>(optional)</em></li> *}
+        <li> <strong>date='false'</strong> - Default is true, but setting this to false will disable date being shown.<em>(optional)</em></li>
+        <li> <strong>dateformat='Y-m-d'</strong> - <a href="http://php.net/manual/en/function.date.php" target="_blank">Date format</a>.<em>(optional)</em></li>
+        <li> <strong>browse_subdirs='1'</strong> - Allow browse subdirectories. Default is 0.<em>(optional)</em></li>
+          {* <li> <strong>prettyurls='true'</strong> - Default is false. This only becomes an issue when used in conjunction with the browsesubdirs parameter.<em>(optional)</em></li> *}
+        <li> <strong>listtype='ol'</strong> - Default is ul. This parameter allows you to specify whether your list should be an Ordered or Unordered list. Only options available are ul and ol.<em>(optional)</em></li>
+        <li> <strong>maxentries='10'</strong> - Default is all. This parameter allows you to specify the maximum number of files/folders to display.<em>(optional)</em></li>
+        <li> <strong>target='_blank'</strong> - Default is none. Possible options are _blank, _self, _parent, _top.<em>(optional)</em></li>
+        <li> <strong>tracking='original'</strong> - Default is universal. Specify what version of the analytics event tracking code appears. Possible options are universal or original.<em>(optional)</em></li>
       </ul>
+        <p>Example:</p>
+        <pre class="click-to-copy" title="Click to copy to clipboard">&#123;files_list folder='myfiles'}</pre>
+      <p>This plugin is still a work in progress, so there are some bugs yet to be fixed. Do some thorough tests to see if it fits your needs.</p>
+      <p>You can use the template below as a starting point to build your own template:</p>
 
-      <p>Example:</p>
-      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;trigger_404 msg='this' active=$do_trigger}</pre>
+      <pre class="click-to-copy" title="Click to copy to clipboard">
+  &lt;ul&gt;
+    &#123;foreach $files_list-&gt;files as $one}
+      &lt;li&gt;
+        &#123;if $one.sub_type=='image'}
+            &#123;*
+              if you wish to use thumbs by default the folder name is thumbs
+              &lt;a href="&#123;$one.url}"&gt;&lt;img src="&#123;$one.thumbs_url}" alt="&#123;$one.name}"&gt;&lt;/a&gt;
+              but that can be overriden by using the thumbs_folder='foldername' parameter on the tag.
+            *}
+          &lt;a href="&#123;$one.url}"&gt;&lt;img src="&#123;$one.url}" alt="&#123;$one.name}"&gt;&lt;/a&gt;
+        &#123;else}
+         &lt;a href="&#123;$one.url}"&gt;&#123;$one.name}&lt;/a&gt;
+        &#123;/if}
+        &lt;ul&gt;
+          &lt;li&gt;name: &#123;$one.name}&lt;/li&gt;
+          &lt;li&gt;type: &#123;$one.type}&lt;/li&gt;
+          &lt;li&gt;url: &#123;$one.url}&lt;/li&gt;
+        &#123;if $one.type == 'file'}
+          &lt;li&gt;file_ext: &#123;$one.file_ext}&lt;/li&gt;
+          &lt;li&gt;sub_type: &#123;$one.sub_type}&lt;/li&gt;
+          &lt;li&gt;title: &#123;$one.title}&lt;/li&gt;
+          &lt;li&gt;size: &#123;$one.size}&lt;/li&gt;
+          &lt;li&gt;date: &#123;$one.date}&lt;/li&gt;
+          &#123;if isset($one.download_count)}&lt;li&gt;downloads: &#123;$one.download_count}&lt;/li&gt;&#123;/if}
+        &#123;elseif $one.type == 'dir'}
+          &lt;li&gt;file_ext: &#123;$one.file_ext}&lt;/li&gt;
+          &lt;li&gt;title: &#123;$one.title}&lt;/li&gt;
+          &lt;li&gt;date: &#123;$one.date}&lt;/li&gt;
+        &#123;/if}
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &#123;/foreach}
+  &lt;/ul&gt;
+  &lt;hr&gt;
+  Total Size Text: &#123;$files_list-&gt;total_size_text}
+  Total Size: &#123;$files_list-&gt;total_size}</pre>
     </div>
   </li>
-  {*******************************************************************************}
+{***********************************************************************}
   <li class="accordion-list-item">
-    <h3 class="al">&#123;trigger_403} <span class="small">Trigger a 403 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <h3 id="mod_action_link" class="al">&#123;mod_action_link} <span class="small">Create a link to a module action</span></h3>
     <div class="accordion-list-item-body">
-      <p>A smarty plugin that will trigger a server 403 error. The way the error will be handled depends on whether there is a custom CMSMS 403 error page set in Content Manager or not.</p>
-      <p>Parameters:</p>
+      <p>A plugin that can create a link to a module action.</p>
+      <h4>Parameters</h4>
       <ul>
-        <li><strong>active</strong> - Needs to be 1, true, or a non-empty string to trigger the error;</li>
-        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'Permission denied!'</strong>);</li>
+        <li><strong>module</strong> - The module to create a link to. This argument is optional, the system will attempt to detect the current module name (if within a module action)</li>
+        <li><strong>action</strong> (default) - The action to call within the module</li>
+        <li><strong>text</strong> - The text to put in the link</li>
+        <li><strong>page</strong> - Specify the destination page</li>
+        <li><strong>urlonly</strong> - Instead of generating a link, generate just the url</li>
+        <li><strong>jsfriendly</strong> | <strong>forjs</strong> - Turns on the urlonly parameter, and indicates that javascript friendly urls are output.</li>
+        <li><strong>forajax</strong> - Turns on the jsfriendly parameter (and the urlonly parameter), and also appends showtemplate=false to the URL output for AJAX requests</li>
+        <li><strong>confmessage</strong> - A confirmation message to display when the link is clicked.</li>
+        <li><strong>image</strong> - An image to use on the link</li>
+        <li><strong>imageonly</strong> - If an image is specified, create a link only consisting of the image. The text will be used for the title attribute</li>
+        <li><strong>assign</strong> - Assign the output of the plugin to the named Smarty variable.</li>
       </ul>
 
+      <p>Any other arguments to the Smarty plugin will be added to the URL generated.</p>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;mod_action_link module='News' action='fesubmit' text='Submit a New News Article'}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="mod_action_url" class="al">&#123;mod_action_url} <span class="small">Create an url to a module action</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin that can create an url to a module action.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>module</strong> - The module to create a link to. This argument is optional, the system will attempt to detect the current module name (if within a module action)</li>
+        <li><strong>action</strong> (default) - The action to call within the module</li>
+        <li><strong>page</strong> - Specify the destination page</li>
+        <li><strong>jsfriendly</strong> | <strong>forjs</strong> - Turns on the urlonly parameter, and indicates that javascript friendly urls are output.</li>
+        <li><strong>forajax</strong> - Turns on the jsfriendly parameter (and the urlonly parameter), and also appends showtemplate=false to the URL output for AJAX requests</li>
+        <li><strong>assign</strong> - Assign the output of the plugin to the named Smarty variable.</li>
+      </ul>
+
+      <p>Any other parameters to the Smarty plugin will be added to the URL generated.</p>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;mod_action_url module='News' action='fesubmit' assign='foo'}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="sess_erase" class="al">&#123;sess_erase} <span class="small">Remove a session variable recorded by &#123sess_put}</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin that will erase data from the PHP session.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>var</strong> - The name/key of the variable to erase.</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;sess_erase var='test'}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="sess_put" class="al">&#123;sess_put} <span class="small">Store a variable and its value in the PHP session</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin that will store data in the PHP session. This data is then accessible via the $smarty.session array in subsequent pages.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>var</strong> - The name/key of the variable to create.</li>
+        <li><strong>value</strong> - The desired value of the variable.</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;sess_put var='test' value='blah'}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="trigger_403" class="al">&#123;trigger_403} <span class="small">Trigger a 403 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin that will trigger a server 403 error. The way the error will be handled depends on whether there is a custom CMSMS 403 error page set in Content Manager or not.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>active</strong> -Needs to be &apos;truthy&apos; (non-0 number, true, or non-empty string) to trigger the error;</li>
+        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'Permission denied!'</strong>);</li>
+      </ul>
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;trigger_403 msg='this' active=$do_trigger}</pre>
     </div>
   </li>
-  {*******************************************************************************}
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="trigger_404" class="al">&#123;trigger_404} <span class="small">Trigger a 404 error <span style="color:green"><strong>(new)</strong></span></span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin that will trigger a server 404 error. The way the error will be handled depends on whether there is a custom CMSMS 404 error page set in Content Manager or not.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>active</strong> - Needs to be &apos;truthy&apos; (non-0 number, true, or non-empty string) to trigger the error;</li>
+        <li><strong>msg</strong> - The message to display when the error is triggered (default <strong>'This content is not available'</strong>;)</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;trigger_404 msg='this' active=$do_trigger}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="xt_anchor_link" class="al">&#123;xt_anchor_link} <span class="small">Generate a link to an anchor on the same page</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin to generate a link to an anchor that is on the same page.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>n</strong> | <strong>name</strong> - <em>(string)</em> The name of the anchor to link to.</li>
+        <li><strong>text</strong> - <em>(string></em> The text portion of the link. If not specified, the anchor name will be used.</li>
+        <li><strong>urlonly</strong> - <em>(bool)</em> Optionally only generate the URL portion of the link. see smx::anchor_url()</li>
+        <li><strong>assign</strong> - <em>(string></em> Optionally assign the output of the plugin to the named Smarty variable.</li>
+      </ul>
+      <p>Any other arguments to the Smarty plugin will be added as attributes to the link generated.</p>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_anchor_link name=bottom class="anchor_class" id="anchor_id"}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="xt_getvar" class="al">&#123;xt_getvar} <span class="small">Retrieve a variable value recorded by &#123xt_setvar}</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin to retieve a recorded variable, or a default value if the specified variable is not recorded</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>var</strong> - Name/key of the wanted variable</li>
+        <li><strong>v</strong> - Alias of the var property</li>
+        <li><strong>dflt</strong> - The value to return if the specified variable is not found. If not specified, the default will be null.</li>
+        <li><strong>assign</strong> - Assign the output to the specified Smarty variable</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_getvar args}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="xt_repeat" class="al">&#123;xt_repeat} <span class="small">Generate repeating text</span></h3>
+    <div class="accordion-list-item-body">
+      <p>Another Smarty plugin that allows repeating text</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>text</strong> - The text to be repeated</li>
+        <li><strong>count</strong> - The number of times it should be repeated</li>
+        <li><strong>assign</strong> - Assign the output to the specified Smarty variable</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_repeat text='this' count='5'}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="xt_setvar" class="al">&#123;xt_setvar} <span class="small">Record or remove variable value(s) for use in the current request</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin to set or clear one or more variables for use during the current request.<br>To clear, specify &apos;_unset_&apos; for the variable value.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>varname1</strong> - Identifier of 1st variable to be set or cleared</li>
+        <li style="list-style-type:none">...</li>
+        <li><strong>varnameN</strong> - Identifier of Nth variable to be set or cleared</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_setvar name1=&apos;woowoo is my name&apos; name2=&apos;_unset_&apos;}</pre>
+    </div>
+  </li>
+{***********************************************************************}
+  <li class="accordion-list-item">
+    <h3 id="xt_unsetvar" class="al">&#123;xt_unsetvar} <span class="small">Clear variable(s) recorded by &#123xt_setvar}</span></h3>
+    <div class="accordion-list-item-body">
+      <p>A plugin to clear one or more recorded variables, specified either as a comma-separated series of names, or one or more parameter-specifed individual names</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><strong>unset</strong> - Clear all variables specified in the value, a comma-separated series</li>
+        <li><strong>varname1</strong> - Identifier of 1st variable to be cleared</li>
+        <li style="list-style-type:none">...</li>
+        <li><strong>varnameN</strong> - Identifier of Nth variable to be cleared</li>
+      </ul>
+      <p>Example:</p>
+      <pre class="click-to-copy" title="Click to copy to clipboard">&#123;xt_unsetvar username}</pre>
+    </div>
+  </li>
 </ul>
-{*******************************************************************************}
-{*******************************************************************************}

@@ -1,22 +1,18 @@
 <style>
-*
-{
+* {
   box-sizing: border-box;
 }
 
-.click-to-copy
-{
+.click-to-copy {
   cursor:pointer;
 }
 
-.small
-{
+.small {
   font-size: 85%;
   margin: 0 0 0 15px;
 }
 
-ul.accordion-list
-{
+ul.accordion-list {
   position: relative;
   display: block;
   width: 96% !important;
@@ -27,8 +23,7 @@ ul.accordion-list
   background-color: #f9f9fA;
 }
 
-ul.accordion-list .accordion-list-item
-{
+ul.accordion-list .accordion-list-item {
   position: relative;
   display: block;
   width: 100%;
@@ -40,13 +35,11 @@ ul.accordion-list .accordion-list-item
   border-radius: 5px;
 }
 
-ul.accordion-list .accordion-list-item.active h3.al:after
-{
+ul.accordion-list .accordion-list-item.active h3.al:after {
   transform: rotate(45deg);
 }
 
-ul.accordion-list .accordion-list-item h3.al
-{
+ul.accordion-list .accordion-list-item h3.al {
   font-weight: 700;
   /*text-decoration-line: underline;*/
   position: relative;
@@ -60,10 +53,9 @@ ul.accordion-list .accordion-list-item h3.al
   cursor: pointer;
 }
 
-ul.accordion-list .accordion-list-item h3.al:after
-{
+ul.accordion-list .accordion-list-item h3.al:after {
   content: "+";
-/ / font-family: "material-design-iconic-font";
+/* font-family: "material-design-iconic-font";*/
   position: absolute;
   right: 0;
   top: 0;
@@ -72,8 +64,7 @@ ul.accordion-list .accordion-list-item h3.al:after
   font-size: 18px;
 }
 
-ul.accordion-list .accordion-list-item div.accordion-list-item-body
-{
+ul.accordion-list .accordion-list-item div.accordion-list-item-body {
   position: relative;
   display: block;
   width: 100%;
@@ -82,8 +73,7 @@ ul.accordion-list .accordion-list-item div.accordion-list-item-body
   padding: 0;
 }
 
-ul.accordion-list .accordion-list-item div.accordion-list-item-body p
-{
+ul.accordion-list .accordion-list-item div.accordion-list-item-body p {
   position: relative;
   display: block;
   font-weight: 300;
@@ -92,8 +82,8 @@ ul.accordion-list .accordion-list-item div.accordion-list-item-body p
   margin: 0 0 0 0;
   font-size: 14px;
 }
-ul.highlight-list
-{
+
+ul.highlight-list {
   background-color: #eeeeee;
   position: relative;
   display: block;
@@ -104,26 +94,31 @@ ul.highlight-list
 }
 </style>
 
-<script src="{$mod->GetModuleURLPath()}/js/js.cookie.js"></script>
-<script src="{$mod->GetModuleURLPath()}/js/js.functions.js"></script>
-
+<script src="{$baseurl}/js/js.cookie.js"></script>
+<script src="{$baseurl}/js/js.functions.js"></script>
+<script>
+$(function() {
+  $('#page_tabs > #general').trigger('click');
+});
+</script>
 <div id="page_tabs">
-  <div  id="general">
-      General
+  <div id="general">
+    General
   </div>
-  <div  id="plugins">
-      Plugins
+  <div id="plugins">
+    Plugins
   </div>
-  <div  id="class">
-      Class
+  <div id="class">
+    Class
   </div>
   <div id="new">
-     What's New
+    What's New
   </div>
   <div id="about">
-     About
+    About
   </div>
 </div>
+<div class="clearb"></div>
 <div id="page_content">
   <div id="general_c">
     {include file='module_file_tpl:SmartyExt;help_general_tab.tpl'}
@@ -136,9 +131,8 @@ ul.highlight-list
   </div>
   <div id="new_c">
     {include file='module_file_tpl:SmartyExt;help_what_is_new_tab.tpl'}
-	</div>
+  </div>
   <div id="about_c">
     {include file='module_file_tpl:SmartyExt;help_about_tab.tpl'}
-	</div>
-  <div class="clearb"></div>
+  </div>
 </div>

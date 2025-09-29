@@ -3,7 +3,7 @@
 <h3>Available Functions:</h3>
 <ul class="accordion-list">
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::self_url()} <span class="small">Return the current URL</span>
+    <h3 id="self_url" class="al">&#123;smx::self_url()} <span class="small">Return the current URL</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -13,7 +13,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::anchor_url(...)} <span class="small">URL to an anchor on the same page</span>
+    <h3 id="anchor_url" class="al">&#123;smx::anchor_url(...)} <span class="small">URL to an anchor on the same page</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -29,7 +29,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::smx::module_installed(...)} <span class="small">Test if a module is installed</span>
+    <h3 id="module_installed" class="al">&#123;smx::smx::module_installed(...)} <span class="small">Test if a module is installed</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -45,7 +45,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::module_version(...)} <span class="small">Return the version of a module</span>
+    <h3 id="module_version" class="al">&#123;smx::module_version(...)} <span class="small">Return the version of a module</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -61,7 +61,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_parent_alias(...)} <span class="small">Returns the alias of page's parent</span>
+    <h3 id="get_parent_alias" class="al">&#123;smx::get_parent_alias(...)} <span class="small">Returns the alias of page's parent</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -77,7 +77,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::is_child_of(...)} <span class="small">Tests whether is a child of the specified parent alias</span>
+    <h3 id="is_child_of" class="al">&#123;smx::is_child_of(...)} <span class="small">Tests whether is a child of the specified parent alias</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -94,7 +94,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_root_alias(...)} <span class="small">Returns the alias of a page's root parent</span>
+    <h3 id="get_root_alias" class="al">&#123;smx::get_root_alias(...)} <span class="small">Returns the alias of a page's root parent</span>
     </h3>
     <div class="accordion-list-item-body">
       <strong>smx::get_root_alias</strong>([$alias]) <p>Returns the alias of the specified page's root parent. Returns an empty string if there is no root parent.</p>
@@ -107,7 +107,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_page_title(...)} <span class="small">Returns the title of a page</span>
+    <h3 id="get_page_title" class="al">&#123;smx::get_page_title(...)} <span class="small">Returns the title of a page</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -122,7 +122,7 @@
       <pre class="click-to-copy" title="Click to copy to clipboard">The title of the current page is &#123;smx::get_page_title()}</pre>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_page_menutext(...)} <span class="small">Returns the menu text of a page</span>
+    <h3 id="get_page_menutext" class="al">&#123;smx::get_page_menutext(...)} <span class="small">Returns the menu text of a page</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -138,7 +138,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_page_type(...)} <span class="small">Returns the content type by alias</span>
+    <h3 id="get_page_type" class="al">&#123;smx::get_page_type(...)} <span class="small">Returns the content type by alias</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -154,7 +154,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::has_children(...)} <span class="small">Test if a page has children</span>
+    <h3 id="has_children" class="al">&#123;smx::has_children(...)} <span class="small">Test if a page has children</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -170,7 +170,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_children(...)} <span class="small">Get information about a page's children</span>
+    <h3 id="get_children" class="al">&#123;smx::get_children(...)} <span class="small">Get information about a page's children</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -204,7 +204,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_page_content(...)} <span class="small">Returns the text of a content block of another page</span>
+    <h3 id="get_page_content" class="al">&#123;smx::get_page_content(...)} <span class="small">Returns the text of a content block of another page</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -221,7 +221,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_sibling(...)} <span class="small">Returns the alias of the next or previous sibling</span>
+    <h3 id="get_sibling" class="al">&#123;smx::get_sibling(...)} <span class="small">Returns the alias of the next or previous sibling</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -237,7 +237,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_parallel_page(...)} <span class="small">Get the alias of a parallel page in the page structure</span>
+    <h3 id="get_parallel_page" class="al">&#123;smx::get_parallel_page(...)} <span class="small">Get the alias of a parallel page in the page structure</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -256,7 +256,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_parallel_url(...)} <span class="small">Get the URL of a parallel page in the page structure</span>
+    <h3 id="get_parallel_url" class="al">&#123;smx::get_parallel_url(...)} <span class="small">Get the URL of a parallel page in the page structure</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
@@ -276,7 +276,7 @@
     </div>
   </li>
   <li class="accordion-list-item">
-    <h3 class="al">&#123;smx::get_file_listing(...)} <span class="small">Return a list of files in a directory</span>
+    <h3 id="get_file_listing" class="al">&#123;smx::get_file_listing(...)} <span class="small">Return a list of files in a directory</span>
     </h3>
     <div class="accordion-list-item-body">
       <p>
