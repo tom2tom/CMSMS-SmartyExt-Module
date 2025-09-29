@@ -1,0 +1,5 @@
+UNUSED*
+HIDE*
+#non-en translations
+**/lang/ext/*.php
+**/lang/**/ext/*.php

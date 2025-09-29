@@ -1,2 +1,5 @@
 # CMSMS-SmartyExt-Module
-Fork of SmartyExt module v.1.3.0 from Forge
+
+A CMSMS Made Simple module which provides Smarty plugins and template-methods for use by other modules.
+
+Suitable for PHP's 5.6 to 8.5.
