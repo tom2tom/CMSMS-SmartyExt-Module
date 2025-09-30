@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{$baseurl}/css/help{$dir|default:''}.css">
 <script src="{$baseurl}/js/js.cookie.js"></script>
-<script src="{$baseurl}/js/js.functions.js"></script>
+<script src="{$baseurl}/js/js.help.js"></script>
 <script>
 $(function() {
  $('#index_c').find('span').on('click', function(e) {
