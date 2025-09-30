@@ -3,7 +3,7 @@
   <li class="accordion-list-item">
     <h3 id="content_fetch" class="al">&#123;content_fetch} <span class="small">Fetch and reuse CMSMS content</span></h3>
     <div class="accordion-list-item-body">
-      <p>A fork of <strong><em>&#123;content_dump}</em></strong> from Nils Haack. Still a work in progress, so keep checking these docs for changes in parameters and behaviour.</p>
+      <p>A fork of <strong>&#123;content_dump}</strong> by Nils Haack. Still a work in progress, so keep checking these docs for changes in parameters and behaviour.</p>
       <p>A <em>'Swiss Army Knife'</em> for CMSMS content fetching, giving you the ability to fetch content and insert it into a single page. It offers a variety of independent parameters that can be combined to cater for a lot of your site's internal content distribution needs.</p>
       <p>Just attach some parameters and limit/organize the output to your data requirements. The Smarty output allows you to freely design the results in your template or content block (from the regular editors view - though it is recommended to do it in the template). With Smarty, you can even control the output by limiting it to specific values (e.g. only user 'John Doe') or use modifiers to further manipulate the content.</p>
       <h4>Recognised Parameters</h4>
@@ -125,7 +125,7 @@
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch assign='my_var_name'}
-  &lt;pre>&#123;$my_var_name|print_r:1}&lt;/pre></pre>
+  &lt;pre&gt;&#123;$my_var_name|print_r:1}&lt;/pre&gt;</pre>
       <p>That should output the contents of the assigned var as an array of results the structure of which should vary depending on the parameters used.</p>
 
       <h3>Selecting items</h3>
@@ -134,11 +134,11 @@
       <p>Example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch assign='my_var_name'}
-  &#123;$my_var_name[0]->content->alias}</pre>
+  &#123;$my_var_name[0]-&gt;content-&gt;alias}</pre>
 
       <h4><em>Selecting a content-block</em></h4>
 
-      <p><strong>block_name</strong> can be used to define the content block you want to use as the &#123;&#123;$content_fetch[n]->content->data} element. As a default, it will be <em>'content_en'</em>, the page standard content block. If the block you want to show is &#123;content block='summary'} in your source page's template, you would call it like in the following example:</p>
+      <p><strong>block_name</strong> can be used to define the content block you want to use as the &#123;&#123;$content_fetch[n]-&gt;content-&gt;data} element. As a default, it will be <em>'content_en'</em>, the page standard content block. If the block you want to show is &#123;content block='summary'} in your source page's template, you would call it like in the following example:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;content_fetch block_name='summary'}</pre>
 
       <h4><em>Where should the fetch begin?</em></h4>
@@ -155,7 +155,7 @@
 
       <h4><em>Pagination</em></h4>
       <p><strong>page</strong> can be used to generate a page based view. Value is <em>page number</em>. It will basically move the view you have on the results by the number of items specified in limit_count. It alters the limit_start by adding limit_count to it, each time an increasing page is selected. Let's say you have limit_start=0 and limit_count=5, page=2 will alter limit_start to be 6.</p>
-      <p>Usage of this parameter will provide some extra smarty data elements. $pager_info->current, $pager_info->max and $pager_info->size. Representing the currently selected page, the maximum page available and the page size. Use smarty and this data to build easy and complex pagers alike.</p>
+      <p>Usage of this parameter will provide some extra smarty data elements. $pager_info-&gt;current, $pager_info-&gt;max and $pager_info-&gt;size. Representing the currently selected page, the maximum page available and the page size. Use smarty and this data to build easy and complex pagers alike.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;content_fetch limit_count=5 page=2}</pre>
 
       <h4><em>Show also inactive pages or only inactive pages.</em></h4>
@@ -169,7 +169,7 @@
       <h3>Filter items</h3>
 
       <h4><em>Filter for specific content (e.g. check if data fields contain the word 'world')</em></h4>
-      <p><strong>filter</strong> can be used to limit the results to entries which contain specific words or phrases or to exlude such items. Use boolean logic. e.g. filter='-hello' to exclude items that contain the word 'hello' in any of their content->data or extension->itemname->data elements or filter='world' to limit the results to those items that contain the word 'world' in any of their data elements.</p>
+      <p><strong>filter</strong> can be used to limit the results to entries which contain specific words or phrases or to exlude such items. Use boolean logic. e.g. filter='-hello' to exclude items that contain the word 'hello' in any of their content-&gt;data or extension-&gt;itemname-&gt;data elements or filter='world' to limit the results to those items that contain the word 'world' in any of their data elements.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch filter='world'}</pre>
 
       <h4><em>Exclude or limit (filter) the output to pages with matching alias prefix</em></h4>
@@ -198,20 +198,20 @@
 
       <h3>Add more data to the item</h3>
       <h4><em>Get more information about parent pages</em></h4>
-      <p><strong>parents</strong> can be used to request more information about the parent pages (alias and title). Possible values are <em>true</em> or <em>false</em>. Using these parameters allows you to use the data element $dump[n]->parents->alias or $dump[n]->parents->title. The data element $dump[n]->parents->id will be provided in any case.</p>
+      <p><strong>parents</strong> can be used to request more information about the parent pages (alias and title). Possible values are <em>true</em> or <em>false</em>. Using these parameters allows you to use the data element $dump[n]-&gt;parents-&gt;alias or $dump[n]-&gt;parents-&gt;title. The data element $dump[n]-&gt;parents-&gt;id will be provided in any case.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch parents=true}</pre>
 
       <h4><em>Get more information about the users who wrote/edited the content</em></h4>
-      <p><strong>users</strong> can be used to request more information about the users who last edited and created the content. Possible values are <em>true</em> or <em>false</em>. Per default $dump[n]->created->by and $dump[n]->modified->by will only return the user ID. If set to true, the mentioned class elements will be expanded by detailed user info (first-, last- and user name).</p>
+      <p><strong>users</strong> can be used to request more information about the users who last edited and created the content. Possible values are <em>true</em> or <em>false</em>. Per default $dump[n]-&gt;created-&gt;by and $dump[n]-&gt;modified-&gt;by will only return the user ID. If set to true, the mentioned class elements will be expanded by detailed user info (first-, last- and user name).</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch users=true}</pre>
       <h4><em>Using more content-blocks from the pages</em></h4>
-      <p><strong>extensions</strong> is your choice then. It takes a <em>comma separated list of content_blocks</em>. If any of them (for an item) features content, $dump[n]->extension will be '1', other wise it will be '0' (default). This can be used to check for availability of 'more' data. Each content_block will be added as a class below $dump[n]->extensions. E.g. &#123;$content block='more_text'} will be available as $dump[n]->extensions->more_text->data together with $dump[n]->extensions->more_text->length. Ideally, your content block names do not feature special characters and not ' ' or '-', use '_' instead.</p>
+      <p><strong>extensions</strong> is your choice then. It takes a <em>comma separated list of content_blocks</em>. If any of them (for an item) features content, $dump[n]-&gt;extension will be '1', other wise it will be '0' (default). This can be used to check for availability of 'more' data. Each content_block will be added as a class below $dump[n]-&gt;extensions. E.g. &#123;$content block='more_text'} will be available as $dump[n]-&gt;extensions-&gt;more_text-&gt;data together with $dump[n]-&gt;extensions-&gt;more_text-&gt;length. Ideally, your content block names do not feature special characters and not ' ' or '-', use '_' instead.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch extensions='summary,image,other_block_name'}</pre>
 
       <h3>Process data from items</h3>
 
       <h4><em>Change the date/time format</em></h4>
-      <p><strong>dateformat</strong> can be used to format the date output of content_fetch. Check <a href="http://de.php.net/strftime" target="blank">http://de.php.net/strftime</a> for more ifo on the date format _options. It is set to <em>'%A, %e %B %Y'</em> by default (e.g. Sat, 20 September 2008). It is used for the two time stamps $dump[n]->created->date and $dump[n]->modified->date that are always returned with each item.</p>
+      <p><strong>dateformat</strong> can be used to format the date output of content_fetch. Check <a href="http://de.php.net/strftime" target="blank">http://de.php.net/strftime</a> for more ifo on the date format _options. It is set to <em>'%A, %e %B %Y'</em> by default (e.g. Sat, 20 September 2008). It is used for the two time stamps $dump[n]-&gt;created-&gt;date and $dump[n]-&gt;modified-&gt;date that are always returned with each item.</p>
       <pre class="click-to-copy" title="Click to copy to clipboard">&#123;$content_fetch dateformat='%A, %e %B %Y'}</pre>
 
       <h4><em>Change the date/time locale</em></h4>
@@ -288,7 +288,7 @@
     And for each extension you have named, you will get an equally named class element below &#123;$content_fetch[n]-&gt;extensions
     e.g.
   *}
-  &#123;$content_fetch[1]->extensions-&gt;summary-&gt;data}
+  &#123;$content_fetch[1]-&gt;extensions-&gt;summary-&gt;data}
   &#123;$content_fetch[1]-&gt;extensions-&gt;summary-&gt;length}
       </pre>
 
@@ -309,30 +309,30 @@
       <p>This will listen for URL parameter called show_page and its value. If no parameter found, create is and assign value 1. Use $page_call as the value of the page parameter &#123;...page=$page_call...}</p>
       <h4>'newer' 'older' pager</h4>
       <pre class="click-to-copy" title="Click to copy to clipboard">
-  &#123;if $page_call > 1 }
-    &lt;a href="blog.htm?show_page=&#123;$pager_info->current-1}">newer articles&lt;/a>
+  &#123;if $page_call &gt; 1}
+    &lt;a href="blog.htm?show_page=&#123;$pager_info-&gt;current-1}"&gt;newer articles&lt;/a&gt;
   &#123;/if}
 
-  &#123;if $pager_info->max > $page_call}
-    &lt;a href="blog.htm?show_page=&#123;$pager_info->current+1}">older articles&lt;/a>
+  &#123;if $pager_info-&gt;max &gt; $page_call}
+    &lt;a href="blog.htm?show_page=&#123;$pager_info-&gt;current+1}"&gt;older articles&lt;/a&gt;
   &#123;/if}</pre>
       <h4>Page number list pager</h4>
       <pre class="click-to-copy" title="Click to copy to clipboard">
-&#123;section name='i' start=1 loop=$pager_info->max+1 step=1}
-&lt;a href="blog.htm?show_page=&#123;$smarty.section.i.index}">&#123;$smarty.section.i.index}&lt;/a>
+&#123;section name='i' start=1 loop=$pager_info-&gt;max+1 step=1}
+&lt;a href="blog.htm?show_page=&#123;$smarty.section.i.index}"&gt;&#123;$smarty.section.i.index}&lt;/a&gt;
 &#123;/section}</pre>
       <h4>Walk through all available elements</h4>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch ... }
   &#123;foreach $content_fetch as $fetch_data}
-  &#123;$fetch_data->content->data}
+  &#123;$fetch_data-&gt;content-&gt;data}
   &#123;/foreach}</pre>
       <h4>Display read more link</h4>
       <pre class="click-to-copy" title="Click to copy to clipboard">
   &#123;content_fetch ... }
   &#123;foreach $content_fetch as $fetch_data}
-    &#123;if $fetch_data->extension == 1}
-      &lt;a href="&#123;$fetch_data->content->alias}.htm">read more&lt;/a>
+    &#123;if $fetch_data-&gt;extension == 1}
+      &lt;a href="&#123;$fetch_data-&gt;content-&gt;alias}.htm"&gt;read more&lt;/a&gt;
     &#123;/if}
   &#123;/foreach}</pre>
       <p>Original Author of the content_dump plugin: Nils Haack &lt;hello@opticalvalve.com&gt;</p>
@@ -342,12 +342,12 @@
   <li class="accordion-list-item">
     <h3 id="content_protect" class="al">&#123;content_protect} <span class="small">Protect content with a password</span></h3>
     <div class="accordion-list-item-body">
-      <p>This is a fork of <strong>page_protect</strong> by Jo Morg. Same code base, a few differences emerged  from being integrated in a module, in particular the lack of need to initialize the plugin as in the original plugin.<br>
+      <p>This is a fork of <strong>&#123;page_protect}</strong> by Jo Morg. Same code base, a few differences emerged from being integrated in a module, in particular no need to initialize the plugin as in the original plugin.<br>
         This plugin allows you to protect a number of pages with one or more passwords either by being set once per each page you want to protect, or by being set on a page template, allowing you to protect all pages connected to that template. It is complemented by a block plugin <code><strong>&#123;protect} <em>...content you want to protect...</em> &#123;/protect}</strong></code>  and a modifier <code><strong>&#123;'protect this'|protect}</strong></code></p>
 
         <div class="warning" style="display:block;">
           <p>
-            <strong>Note: </strong> there is a particularity in the way CMSMS renders content which may expose protected content in certain situations. To prevent that there are a few rules you need to follow:
+            <strong>Note:</strong> there is a particularity in the way CMSMS renders content which may expose protected content in certain situations. To prevent that there are a few rules you need to follow:
           </p>
           <ul>
             <li>
@@ -371,18 +371,18 @@
 
         <div class="warning" style="display:block;">
           <p>
-            <strong>Note: </strong> This is a simple, relatively safe way of protecting content without having to install a full-fledged users management module. If you need a more complex and complete users' access management module please consider using <strong>MAMS</strong>.
+            <strong>Note:</strong> This is a simple, relatively safe way of protecting content without having to install a full-fledged users' access management module. If you need more-complex and complete users' access management please consider using the <strong>MAMS</strong> module.
           </p>
         </div>
 
         <div class="information" style="display:block;">
           <p>
-            Because of this plugin is a fork of the discontinued Page Protect (page_protect) there are a few parameters that were left for backward compatibility. As this plugin doesn't require initialization, which is done at the module level when it is loaded, the default and the set actions are now the same thing. That means that a typical initialization tag does nothing on its own and can be safely removed (if replaced from a page_protect original tag), but leaving it in place doesn't affect in any way the site's performance.
+            Because this plugin is a fork of the discontinued Page Protect &#123;page_protect} a few parameters were left for backward compatibility. As this plugin doesn't require initialization, which is done at the module level when it is loaded, the 'default' and 'set' actions are now the same thing. That means that a typical initialization tag does nothing on its own and can be safely removed (if replaced from a page_protect original tag), but leaving it in place doesn't affect in any way the site's performance.
           </p>
         </div>
         <div class="information" style="display:block;">
           <p>
-            Parameters marked as <strong><em>(persistent) </em></strong> are set once for the whole page request. The default action can set any and all of them without the need to repeat them on every tag call. However, a later call can override a previously set parameter.
+            Parameters marked as <strong><em>(persistent)</em></strong> are set once for the whole page request. The default action can set any and all of them without the need to repeat them on every tag call. However, a later call can override a previously set parameter.
           </p>
         </div>
 
@@ -508,11 +508,10 @@
       <p>These tags are block smarty tags, and can be used several times on the page in pairs, i.e: an opening tag and a closing tag. The opening tag accepts only one parameter, the <strong>protected_msg</strong> which overrides the default one if set. This is a per occurrence tag, meaning that if it is set on the <em><strong>default</strong></em> or  <em><strong>set</strong></em> actions it is persistent, but if set on a <strong>&#123;protect}</strong> tag it affects only the tag where it is used and doesn't persist to the next occurrence.</p>
 
       <h4><strong>Content wrapping tags example.</strong></h4>
-      <p>Use one of the following tags:
+      <p>Use one of the following tags:</p>
       <pre class="click-to-copy" title="Click to copy to clipboard"> &#123;protect}whatever content you want protected.&#123;/protect}
-      &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}</strong>
+      &#123;protect protected_msg='well, you really should be logged in if you what to see the content'}whatever content you want protected.&#123;/protect}
       </pre>
-      </p>
 
       <h5>The protect block tag accepts only one parameter:</h5>
       <ul>
@@ -583,7 +582,7 @@
       <h4>Passwords</h4>
 
       <div class="warning" style="display:block;">
-      <p><strong>Note:</strong> Unless you use an array to set the passwords, avoid the use of commas (<strong>,</strong>) and of vertical slashes (<strong>|</strong>) as password symbols as these are reserved to internal use and will unavoidably lead to passwords not being recognized by the plugin.</p>
+        <p><strong>Note:</strong> Unless you use an array to set the passwords, avoid the use of commas (<strong>,</strong>) and/or vertical slashes (<strong>|</strong>) as password characters as those are reserved for internal use and will unavoidably lead to passwords not being recognized by the plugin.</p>
       </div>
 
       <h3>Cookies</h3>
@@ -642,7 +641,7 @@
         <li> <strong>date='false'</strong> - Default is true, but setting this to false will disable date being shown.<em>(optional)</em></li>
         <li> <strong>dateformat='Y-m-d'</strong> - <a href="http://php.net/manual/en/function.date.php" target="_blank">Date format</a>.<em>(optional)</em></li>
         <li> <strong>browse_subdirs='1'</strong> - Allow browse subdirectories. Default is 0.<em>(optional)</em></li>
-          {* <li> <strong>prettyurls='true'</strong> - Default is false. This only becomes an issue when used in conjunction with the browsesubdirs parameter.<em>(optional)</em></li> *}
+{*      <li> <strong>prettyurls='true'</strong> - Default is false. This only becomes an issue when used in conjunction with the browsesubdirs parameter.<em>(optional)</em></li> *}
         <li> <strong>listtype='ol'</strong> - Default is ul. This parameter allows you to specify whether your list should be an Ordered or Unordered list. Only options available are ul and ol.<em>(optional)</em></li>
         <li> <strong>maxentries='10'</strong> - Default is all. This parameter allows you to specify the maximum number of files/folders to display.<em>(optional)</em></li>
         <li> <strong>target='_blank'</strong> - Default is none. Possible options are _blank, _self, _parent, _top.<em>(optional)</em></li>
@@ -800,9 +799,9 @@
       <h4>Parameters</h4>
       <ul>
         <li><strong>n</strong> | <strong>name</strong> - <em>(string)</em> The name of the anchor to link to.</li>
-        <li><strong>text</strong> - <em>(string></em> The text portion of the link. If not specified, the anchor name will be used.</li>
+        <li><strong>text</strong> - <em>(string)</em> The text portion of the link. If not specified, the anchor name will be used.</li>
         <li><strong>urlonly</strong> - <em>(bool)</em> Optionally only generate the URL portion of the link. see smx::anchor_url()</li>
-        <li><strong>assign</strong> - <em>(string></em> Optionally assign the output of the plugin to the named Smarty variable.</li>
+        <li><strong>assign</strong> - <em>(string)</em> Optionally assign the output of the plugin to the named Smarty variable.</li>
       </ul>
       <p>Any other arguments to the plugin will be added as attributes to the link generated.</p>
       <p>Example:</p>
