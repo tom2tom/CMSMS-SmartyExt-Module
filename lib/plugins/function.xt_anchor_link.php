@@ -8,13 +8,13 @@
  */
 
 use SmartyExt\smx;
- 
+
 function smarty_function_xt_anchor_link($params, $template)
 {
     $name = get_parameter_value($params, 'n');
     $name = get_parameter_value($params, 'name', $name);
     $text = get_parameter_value($params, 'text', $name);
-    $assign = trim(get_parameter_value($params, 'assign'));
+    $assign = get_parameter_value($params, 'assign');
     $urlonly = get_parameter_value($params, 'u');
     $urlonly = cms_to_bool(get_parameter_value($params, 'urlonly', $urlonly));
 
