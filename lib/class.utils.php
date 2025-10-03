@@ -1,14 +1,8 @@
 <?php
-#BEGIN_LICENSE
-#
 # Module: SmartyExt (c) 2020-2025 by CMS Made Simple Foundation Inc.
 # An add-on module for CMS Made Simple to provide useful functions
 #  and commonly used gui capabilities to other modules.
 # A fork of module: CGSimpleSmarty (c) 2008-2014 by Robert Campbell
-#
-# CMSMS - CMS Made Simple is (c) 2006 - 2021 by CMS Made Simple Foundation
-# CMSMS - CMS Made Simple is (c) 2004 by Ted Kulp (wishy@cmsmadesimple.org)
-# Visit the CMSMS Homepage at: https://www.cmsmadesimple.org
 #
 # This module is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,8 +16,6 @@
 # You should have received a copy of that License along with CMSMS
 # or if not, read the License online at
 # https://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
-#
-#END_LICENSE
 
 namespace SmartyExt;
 

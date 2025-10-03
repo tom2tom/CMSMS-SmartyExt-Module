@@ -12,7 +12,6 @@
 <h3>Copyright and License</h3>
 {if $smarty.now|date_format:"%Y" == '2020'}{$cr = '2020'}{else}{$cr = "2020 - {$smarty.now|date_format:'%Y'}"}{/if}
 <p>Copyright &copy; {$cr}, CMS Made Simple Foundation Inc. <a href="mailto:info@cmsmadesimple.org">&lt;info@cmsmadesimple.org&gt;</a>. All rights reserved.</p>
-<p>Copyright &copy; 2008, Robert Campbell. All rights reserved.</p>
 <br>
 <p>The SmartyExt module is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
 <p>SmartyExt is distributed in the hope that it will be useful, but <strong>WITHOUT ANY WARRANTY</strong>; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
@@ -22,7 +21,7 @@
 <hr>
 <h4>Current Maintainers</h4>
 <ul>
-  <li class="p_bottom_15"><strong>Fernando Morgado (Jo Morg)</strong></li>
+  <li class="p_bottom_15"><strong>Fernando Morgado (JoMorg)</strong></li>
 </ul>
 <h4>Past Maintainers</h4>
 <ul>
