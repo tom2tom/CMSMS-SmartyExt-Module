@@ -760,7 +760,7 @@ function smarty_cms_about_function_content_protect()
     $txt = <<<'EOT'
 <h3>About</h3>
 <p><strong>Version: 1.2</strong></p>
-<p>Author: Jo Morg (Fernando Morgado)</p>
+<p>Author: JoMorg (Fernando Morgado)</p>
 <p>Another plugin made out of need. Enjoy!</p>
 <h3>History</h3>
 <ul>

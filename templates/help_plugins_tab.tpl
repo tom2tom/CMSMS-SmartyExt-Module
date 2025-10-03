@@ -342,7 +342,7 @@
   <li class="accordion-list-item">
     <h3 id="content_protect" class="al">&#123;content_protect} <span class="small">Protect content with a password</span></h3>
     <div class="accordion-list-item-body">
-      <p>This is a fork of <strong>&#123;page_protect}</strong> by Jo Morg. Same code base, a few differences emerged from being integrated in a module, in particular no need to initialize the plugin as in the original plugin.<br>
+      <p>This is a fork of <strong>&#123;page_protect}</strong> by JoMorg. Same code base, a few differences emerged from being integrated in a module, in particular no need to initialize the plugin as in the original plugin.<br>
         This plugin allows you to protect a number of pages with one or more passwords either by being set once per each page you want to protect, or by being set on a page template, allowing you to protect all pages connected to that template. It is complemented by a block plugin <code><strong>&#123;protect} <em>...content you want to protect...</em> &#123;/protect}</strong></code>  and a modifier <code><strong>&#123;'protect this'|protect}</strong></code></p>
 
         <div class="warning" style="display:block;">

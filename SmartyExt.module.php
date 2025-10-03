@@ -40,7 +40,7 @@ class SmartyExt extends CMSModule
         $modname = $this->GetName();
         $dir = ''; // default language direction (for css selection)
         $langnow = CmsNlsOperations::get_current_language();
-        if ($langnow) { 
+        if ($langnow) {
             $info = CmsNlsOperations::get_language_info($langnow);
             if ($info->direction() == 'rtl') {
                 $dir = '-rtl';
