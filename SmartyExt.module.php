@@ -69,7 +69,7 @@ class SmartyExt extends CMSModule
     private function autoloader($classname)
     {
         //$classname will not contain the leading backslash of a fully-qualified identifier
-        if ($classname[0] == 'S' && strncmp($classname, 'SmartyExt', 9) == 0) {
+        if ($classname[0] == 'S' && substr_compare($classname, 'martyExt\\', 1, 9) == 0) {
             //no support here for a class in a nested folder
             $parts = explode('\\', $classname);
             $fn = cms_join_path(__DIR__, 'lib', 'class.' . end($parts) . '.php');
